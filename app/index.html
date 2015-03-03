@@ -8,7 +8,7 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css(.) styles/vendor.css -->
 	<!-- bower:css -->
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
@@ -38,13 +38,13 @@
 	<!-- endbuild -->
 </head>
 <body ng-controller="MainCtrl" ng-cloak>
-	<div class="container">
-		<!--[if lt IE 7]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-			your browser</a> to improve your experience.</p>
-		<![endif]-->
-		<!-- Add your site or application content here -->
-		<nav class="navbar navbar-default">
+	<!--[if lt IE 7]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+		your browser</a> to improve your experience.</p>
+	<![endif]-->
+	<!-- Add your site or application content here -->
+	<nav class="navbar navbar-default">
+		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -75,17 +75,25 @@
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
-		</nav>
-		<!-- <div class="row">
-			<div class="col-xs-12 col-sm-8"><h2>Добрый день, уважаемый посетитель!</h2><br>
-			  Ежедневно множество людей теряют либо находят ценные документы или предметы. Каждый из нас может оказаться в данной ситуации, ведь от этого никто не застрахован. Восстановление документов или замена пропажи - это сложный, затратный и долгий процесс. (дописать 1 или 2 предложения)
-			  Наш проект предлагает помощь Вам или Вашим близким. Мы поможем Вам найти свою пропажу или вернуть найденное.
-			  Не оставайтесь в стороне, помогайте тем, кто нуждается в Вашей помощи и Вам воздастся втройне!
-			</div>
-			<div class="col-xs-12 col-sm-4"><img src="images/wallet.png" class="img-responsive" alt="Responsive image"></div>
-		  </div> -->
+		</div>
+	</nav>
+	<div class="container">
+		<!--<div class="row">-->
+			<!--<div class="col-xs-12 col-md-8">-->
+				<!--<h2>Добрый день, уважаемый посетитель!</h2><br>-->
+				<!--Ежедневно множество людей теряют либо находят ценные документы или предметы. Каждый из нас может-->
+				<!--оказаться в данной ситуации, ведь от этого никто не застрахован. Восстановление документов или замена-->
+				<!--пропажи - это сложный, затратный и долгий процесс. (дописать 1 или 2 предложения)-->
+				<!--Наш проект предлагает помощь Вам или Вашим близким. Мы поможем Вам найти свою пропажу или вернуть-->
+				<!--найденное.-->
+				<!--Не оставайтесь в стороне, помогайте тем, кто нуждается в Вашей помощи и Вам воздастся втройне!-->
+			<!--</div>-->
+			<!--<div class="col-xs-12 col-md-4">-->
+				<!--<img src="images/wallet.png" class="img-responsive" alt="Responsive image">-->
+			<!--</div>-->
+		<!--</div>-->
 		<div class="row">
-			<div class="col-sm-offset-2 col-sm-4 col-xs-6">
+			<div class="col-md-6 col-xs-6">
 				<p>
 					<button class="btn btn-danger btn-lg btn-block" type="button"
 							ng-click="setFormTypeAndToggleOpen('lost', 'утери')">
@@ -93,7 +101,7 @@
 					</button>
 				</p>
 			</div>
-			<div class="col-sm-4 col-xs-6">
+			<div class="col-md-6 col-xs-6">
 				<p>
 					<button class="btn btn-success btn-lg btn-block" type="button"
 							ng-click="setFormTypeAndToggleOpen('found', 'находки')">
@@ -103,7 +111,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-8 col-xs-12 col-sm-offset-2">
+			<div class="col-md-12 col-xs-12">
 				<accordion>
 					<accordion-group is-open="isFormOpen">
 						<form name="lostAndFoundForm" novalidate>
