@@ -41,6 +41,38 @@
 	<script src="scripts/controllers.js"></script>
 	<script src="scripts/services.js"></script>
 	<!-- endbuild -->
+
+	<!-- Polymer -->
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+	<!-- <link rel="import" href="bower_components/core-header-panel/core-header-panel.html"> -->
+	<!-- <link rel="import" href="bower_components/core-toolbar/core-toolbar.html"> -->
+	<link rel="import" href="bower_components/paper-button/paper-button.html">
+	<link rel="import" href="bower_components/paper-input/paper-input.html">
+	<!-- <link rel="import" href="bower_components/core-overlay/core-overlay.html"> -->
+	<!-- <link rel="import" href="bower_components/core-dropdown/core-dropdown.html"> -->
+	<link rel="import" href="bower_components/core-menu/core-menu.html">
+	<link rel="import" href="bower_components/core-dropdown-menu/core-dropdown-menu.html">
+	<link rel="import" href="bower_components/paper-dropdown/paper-dropdown.html">
+	<link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+	<link rel="import" href="bower_components/paper-item/paper-item.html">
+	<!-- <link rel="import" href="bower_components/core-menu/core-menu.html"> -->
+
+	<style>
+		.form-group {
+			/*margin-bottom: 0;*/
+		}
+		#lost_btn {
+			width: 100%;
+			background: #ED5B50;
+			color: #FFF;
+		}
+		#found_btn {
+			width: 100%;
+			background: #0EB072;
+			color: #FFF;
+		}
+	</style>
 </head>
 <body ng-controller="MainCtrl" ng-cloak>
 	<!--[if lt IE 7]>
@@ -95,18 +127,20 @@
 		<div class="row">
 			<div class="col-md-6 col-xs-6">
 				<p>
-					<button id="btn_lost" class="btn btn-danger btn-lg btn-block" type="button"
+					<paper-button raised id="lost_btn" ng-click="setFormTypeAndToggleOpen('lost', 'утери')">Утеряно</paper-button>
+					<!-- <button id="btn_lost" class="btn btn-danger btn-lg btn-block" type="button"
 							ng-click="setFormTypeAndToggleOpen('lost', 'утери')">
 						Утеряно
-					</button>
+					</button> -->
 				</p>
 			</div>
 			<div class="col-md-6 col-xs-6">
 				<p>
-					<button id="btn_found" class="btn btn-info btn-lg btn-block" type="button"
+					<paper-button raised id="found_btn" ng-click="setFormTypeAndToggleOpen('found', 'находки')">Найдено</paper-button>
+					<!-- <button id="btn_found" class="btn btn-info btn-lg btn-block" type="button"
 							ng-click="setFormTypeAndToggleOpen('found', 'находки')">
 						Найдено
-					</button>
+					</button> -->
 				</p>
 			</div>
 		</div>
@@ -117,22 +151,32 @@
 					<form class="form-horizontal" name="lostAndFoundForm" novalidate>
 						<h4 class="text-primary text-center">Предмет {{formTypeRu}}</h4>
 						<div class="form-group">
-							<label class="col-sm-4 col-xs-12 control-label">Категория*</label>
-							<div class="col-sm-6 col-xs-12">
-								<select class="form-control" id="lostAndFound.lostCategory" ng-model="lostAndFound.lostCategory">
+							<!-- <label class="col-sm-4 col-xs-12 control-label">Категория*</label> -->
+							<div class="col-sm-offset-2 col-sm-8 col-xs-12">
+								<paper-dropdown-menu label="Категория*">
+								    <paper-dropdown class="dropdown">
+								        <core-menu class="menu" id="lostAndFound.lostCategory" ng-model="lostAndFound.lostCategory">
+								            <paper-item>Croissant</paper-item>
+								            <paper-item>Donut</paper-item>
+								            <paper-item>Financier</paper-item>
+								            <paper-item>Madeleine</paper-item>
+								        </core-menu>
+								    </paper-dropdown>
+								</paper-dropdown-menu>
+								<!-- <select class="form-control" id="lostAndFound.lostCategory" ng-model="lostAndFound.lostCategory">
 									<option>Документ</option>
 									<option>Портмоне/Сумка</option>
 									<option>Телефон/Планшет</option>
 									<option>Гос. номер</option>
 									<option>Печати/Штампы</option>
 									<option>Другое</option>
-								</select>
+								</select> -->
 								<!-- <div class="text-danger">Тест предупреждение</div> -->
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-4 col-xs-12 control-label">Подкатегория (Документ)*</label>
-							<div class="col-sm-6 col-xs-12">
+							<div class="col-sm-offset-2 col-sm-8 col-xs-12">
 								<select class="form-control" id="lostAndFound.lostSubCategory" ng-model="lostAndFound.lostSubCategory">
 									<option>Удостоверение личности</option>
 									<option>Паспорт</option>
@@ -147,37 +191,52 @@
 						<hr>
 						<h4 class="text-primary text-center">Данные {{formTypeRu}}</h4>
 						<div class="form-group" show-errors>
-							<label class="col-sm-4 col-xs-12 control-label" for="surname">Фамилия*</label>
-							<div class="col-sm-6 col-xs-12">
-								<input type="text" class="form-control" name="lostAndFound.surname" ng-model="lostAndFound.surname" ng-required="true"/>
+							<!-- <label class="col-sm-4 col-xs-12 control-label" for="surname">Фамилия*</label> -->
+							<div class="col-sm-offset-2 col-sm-8 col-xs-12">
+								<paper-input-decorator floatingLabel for="surname" label="Фамилия*">
+									<input type="text" name="lostAndFound.surname" ng-model="lostAndFound.surname" ng-required="true"></input>
+								</paper-input-decorator>
+								<!-- <input type="text" class="form-control" name="lostAndFound.surname" ng-model="lostAndFound.surname" ng-required="true"/> -->
 								<!-- <div class="text-danger">Тест предупреждение</div> -->
 							</div>
 						</div>
 						<div class="form-group" show-errors>
-							<label class="col-sm-4 col-xs-12 control-label" for="surname">Имя*</label>
-							<div class="col-sm-6 col-xs-12">
-								<input type="text" class="form-control" name="lostAndFound.name" ng-model="lostAndFound.name" ng-required="true"/>
+							<!-- <label class="col-sm-4 col-xs-12 control-label" for="name">Имя*</label> -->
+							<div class="col-sm-offset-2 col-sm-8 col-xs-12">
+								<paper-input-decorator floatingLabel for="name" label="Имя*">
+									<input type="text" name="lostAndFound.name" ng-model="lostAndFound.name" ng-required="true"></input>
+								</paper-input-decorator>
+								<!-- <input type="text" class="form-control" name="lostAndFound.name" ng-model="lostAndFound.name" ng-required="true"/> -->
 								<!-- <div class="text-danger">Тест предупреждение</div> -->
 							</div>
 						</div>
 						<div class="form-group" show-errors>
-							<label class="col-sm-4 col-xs-12 control-label" for="date">Дата {{formTypeRu}}*</label>
-							<div class="col-sm-6 col-xs-12">
-								<input type="text" class="form-control" name="lostAndFound.lostDate" ng-model="lostAndFound.lostDate" ng-required="true"/>
+							<!-- <label class="col-sm-4 col-xs-12 control-label" for="date">Дата {{formTypeRu}}*</label> -->
+							<div class="col-sm-offset-2 col-sm-8 col-xs-12">
+								<paper-input-decorator floatingLabel for="date" label="Дата {{formTypeRu}}*">
+									<input type="text" name="lostAndFound.lostDate" ng-model="lostAndFound.lostDate" ng-required="true"></input>
+								</paper-input-decorator>
+								<!-- <input type="text" class="form-control" name="lostAndFound.lostDate" ng-model="lostAndFound.lostDate" ng-required="true"/> -->
 								<!-- <div class="text-danger">Тест предупреждение</div> -->
 							</div>
 						</div>
 						<div class="form-group" show-errors>
-							<label class="col-sm-4 col-xs-12 control-label" for="location">Место/Адрес {{formTypeRu}}*</label>
-							<div class="col-sm-6 col-xs-12">
-								<input type="text" class="form-control" name="lostAndFound.lostAddress" ng-model="lostAndFound.lostAddress" ng-required="true"/>
+							<!-- <label class="col-sm-4 col-xs-12 control-label" for="location">Место/Адрес {{formTypeRu}}*</label> -->
+							<div class="col-sm-offset-2 col-sm-8 col-xs-12">
+								<paper-input-decorator floatingLabel for="location" label="Место/Адрес {{formTypeRu}}*">
+									<input type="text" name="lostAndFound.lostAddress" ng-model="lostAndFound.lostAddress" ng-required="true"></input>
+								</paper-input-decorator>
+								<!-- <input type="text" class="form-control" name="lostAndFound.lostAddress" ng-model="lostAndFound.lostAddress" ng-required="true"/> -->
 								<!-- <div class="text-danger">Тест предупреждение</div> -->
 							</div>
 						</div>
 						<div class="form-group" show-errors>
-							<label class="col-sm-4 col-xs-12 control-label" for="description">Описание*</label>
-							<div class="col-sm-6 col-xs-12">
-								<textarea class="form-control" rows="3" name="lostAndFound.description" ng-model="lostAndFound.description" ng-required="true"></textarea>
+							<!-- <label class="col-sm-4 col-xs-12 control-label" for="description">Описание*</label> -->
+							<div class="col-sm-offset-2 col-sm-8 col-xs-12">
+								<paper-input-decorator floatingLabel for="description" label="Описание*">
+								    <textarea name="lostAndFound.description" ng-model="lostAndFound.description" ng-required="true"></textarea>
+								</paper-input-decorator>
+								<!-- <textarea class="form-control" rows="3" name="lostAndFound.description" ng-model="lostAndFound.description" ng-required="true"></textarea> -->
 								<!-- <div class="text-danger">Тест предупреждение</div> -->
 							</div>
 						</div>
