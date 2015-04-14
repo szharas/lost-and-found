@@ -16,6 +16,7 @@ angular.module('lostAndFoundApp')
 		};
 
 		$scope.setFormTypeAndToggleOpen = function (formType, formTypeRu) {
+			console.log('setFormTypeAndToggleOpen called!');
 			if (!$scope.isFormOpen) {
 				$scope.isFormOpen = true;
 			} else {

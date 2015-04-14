@@ -10,6 +10,7 @@
  */
 angular
 	.module('lostAndFoundApp', [
+		'ngAria',
 		'ngAnimate',
 		'ngCookies',
 		'ngResource',
@@ -17,7 +18,8 @@ angular
 		'ngSanitize',
 		'ngTouch',
 		'ui.bootstrap',
-		'ui.bootstrap.showErrors'
+		'ui.bootstrap.showErrors',
+		'ngMaterial'
 	])
 	.config(function ($routeProvider) {
 		$routeProvider
