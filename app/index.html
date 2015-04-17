@@ -2,7 +2,7 @@
 <html ng-app="lostAndFoundApp">
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>naidi.kz</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -68,11 +68,12 @@
 				<ul class="nav navbar-nav">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-							<span class="glyphicon glyphicon-map-marker" style="padding-right:5px;"></span>Астана<span class="caret"></span>
+							<span class="glyphicon glyphicon-map-marker" style="padding-right:5px;"></span>{{lostAndFound.city}}&nbsp;<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Астана</a></li>
-							<li><a href="#">Алматы</a></li>
+							<li ng-repeat="city in cities">
+								<a ng-click="selectCity(city)">{{city}}</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -123,26 +124,29 @@
 							<h4 class="text-primary text-center">Предмет {{formTypeRu}}</h4>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-8 col-xs-12">
-									<md-select placeholder="Категория {{formTypeRu}}*" style="width: 100%;"
-											   id="lostAndFound.lostCategory" ng-model="lostAndFound.lostCategory">
-										<md-option value="Документ">Документ</md-option>
-										<md-option value="Портмоне/Сумка">Портмоне/Сумка</md-option>
-										<md-option value="Телефон/Планшет">Телефон/Планшет</md-option>
-										<md-option value="Гос. номер">Гос. номер</md-option>
-										<md-option value="Печати/Штампы">Печати/Штампы</md-option>
-										<md-option value="Другое">Другое</md-option>
+									<md-select placeholder="Категория {{formTypeRu}}*"
+											   style="width: 100%;"
+											   id="lostAndFound.lostCategory"
+											   ng-model="lostAndFound.lostCategory">
+										<md-option ng-repeat="category in lostCategories"
+												   ng-click="selectLostCategory(category)"
+												   value="{{category}}">
+											{{category}}
+										</md-option>
 									</md-select>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-8 col-xs-12">
-									<md-select placeholder="Подкатегория (Документ)*" style="width: 100%;"
-											   id="lostAndFound.lostSubCategory" ng-model="lostAndFound.lostSubCategory">
-										<md-option value="Удостоверение личности">Удостоверение личности</md-option>
-										<md-option value="Паспорт">Паспорт</md-option>
-										<md-option value="Свидетельство о рождении">Свидетельство о рождении</md-option>
-										<md-option value="Водительское удостоверение">Водительское удостоверение</md-option>
-										<md-option value="Свидетельство о регистрации транспортного средства">Свидетельство о регистрации транспортного средства</md-option>
+									<md-select placeholder="Подкатегория*"
+											   style="width: 100%;"
+											   id="lostAndFound.lostSubCategory"
+											   ng-model="lostAndFound.lostSubCategory">
+										<md-option ng-repeat="subCategory in lostSubCategories"
+												   ng-click="selectLostSubCategory(subCategory)"
+												   value="{{subCategory}}">
+											{{subCategory}}
+										</md-option>
 									</md-select>
 								</div>
 							</div>
