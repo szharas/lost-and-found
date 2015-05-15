@@ -94,6 +94,7 @@ body {
 body {
 	padding-top: 70px;
 	font-size: 15px;
+	background-image: url("../images/bg3.jpg");
 }
 
 .navbar-default {
@@ -127,6 +128,7 @@ body {
 h1,h2,h3,h4,h5,h6,p{
 	font-family: 'PT Sans', sans-serif;
 	color: #414042;
+	font-weight: normal!important;
 }
 
 .navbar-default .navbar-toggle {
@@ -181,3 +183,19 @@ h1,h2,h3,h4,h5,h6,p{
 	margin: 20px 0;
 }
 /* End: custom app CSS */
+
+.panel-default {
+	border-color: #FFD63A;
+}
+
+label {
+  font-weight: normal;
+}
+
+.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
+  border-top: none;
+}
+
+.panel-heading{
+	display: none;
+}

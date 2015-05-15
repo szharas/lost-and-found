@@ -89,17 +89,17 @@
 		</div>
 	</nav>
 	<div class="container">
-		<!--<div class="row">
+		<div class="row">
 			<div class="col-xs-12 col-sm-8">
-				<h2>Поможем найти утерянное!</h2><br>
+				<h1>Поможем найти утерянное!</h1>
 				<p>Ежедневно люди теряют, либо находят ценные документы или предметы. Восстановление документов или замена
 				пропажи - это сложный, затратный и долгий процесс. Наш проект поможет Вам найти свою пропажу или вернуть найденное. Не оставайтесь в стороне, помогайте тем, кто нуждается в Вашей помощи и Вам воздастся втройне!</p>
 			</div>
 			<div class="hidden-xs col-sm-4">
 				<img src="images/wallet.png" class="img-responsive" alt="Responsive image">
 			</div>
-		</div>-->
-		<hr>
+		</div>
+		<br>
 		<div class="row">
 			<div class="column col-md-6 col-xs-6">
 				<p>
@@ -121,11 +121,11 @@
 				<accordion>
 					<accordion-group is-open="isFormOpen">
 						<form class="form-horizontal" name="lostAndFoundForm" novalidate>
-							<h4 class="text-primary text-center">Предмет {{formTypeRu}}</h4>
+							<br>
+							<h3 class="text-primary text-center">Предмет {{formTypeRu}}</h3>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<md-select placeholder="Категория {{formTypeRu}}*"
-											   style="width: 100%;"
 											   id="lostAndFound.lostCategory"
 											   ng-model="lostAndFound.lostCategory">
 										<md-option ng-repeat="category in lostCategories"
@@ -139,7 +139,6 @@
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<md-select placeholder="Подкатегория*"
-											   style="width: 100%;"
 											   id="lostAndFound.lostSubCategory"
 											   ng-model="lostAndFound.lostSubCategory">
 										<md-option ng-repeat="subCategory in lostSubCategories"
@@ -150,58 +149,56 @@
 									</md-select>
 								</div>
 							</div>
-
-							<hr>
-							<h4 class="text-primary text-center">Данные {{formTypeRu}}</h4>
+							<br>
+							<h3 class="text-primary text-center">Данные {{formTypeRu}}</h3>
 							<div class="form-group" show-errors>
 								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<label for="name">Имя*</label>
-									<input type="text" class="form-control" name="lostAndFound.name" ng-model="lostAndFound.name" ng-required="true" />
+									<input type="text" name="lostAndFound.name" ng-model="lostAndFound.name" ng-required="true" />
 								</md-input-container>
 							</div>
 							<div class="form-group" show-errors>
 								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<label for="surname">Фамилия*</label>
-									<input type="text" class="form-control" name="lostAndFound.surname" ng-model="lostAndFound.surname" ng-required="true" />
+									<input type="text" name="lostAndFound.surname" ng-model="lostAndFound.surname" ng-required="true" />
 								</md-input-container>
 							</div>
 							<div class="form-group" show-errors>
 								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<label for="date">Дата {{formTypeRu}}*</label>
-									<input type="text" class="form-control" name="lostAndFound.lostDate" ng-model="lostAndFound.lostDate" ng-required="true" />
+									<input type="text" name="lostAndFound.lostDate" ng-model="lostAndFound.lostDate" ng-required="true" />
 								</md-input-container>
 							</div>
 							<div class="form-group" show-errors>
 								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<label for="location">Место/Адрес {{formTypeRu}}*</label>
-									<input type="text" class="form-control" name="lostAndFound.lostAddress" ng-model="lostAndFound.lostAddress" ng-required="true" />
+									<input type="text" name="lostAndFound.lostAddress" ng-model="lostAndFound.lostAddress" ng-required="true" />
 								</md-input-container>
 							</div>
 							<div class="form-group" show-errors>
 								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<label for="description">Описание*</label>
-									<input type="text" class="form-control" name="lostAndFound.description" ng-model="lostAndFound.description" ng-required="true" />
+									<input type="text" name="lostAndFound.description" ng-model="lostAndFound.description" ng-required="true" />
 								</md-input-container>
 							</div>
-
-							<hr>
-							<h4 class="text-primary text-center">Как с вами связаться</h4>
+							<br>
+							<h3 class="text-primary text-center">Как с вами связаться</h3>
 							<div class="form-group" show-errors>
 								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<label for="name">Имя*</label>
-									<input type="text" class="form-control" name="lostAndFound.declarantName" ng-model="lostAndFound.declarantName" ng-required="true" />
+									<input type="text" name="lostAndFound.declarantName" ng-model="lostAndFound.declarantName" ng-required="true" />
 								</md-input-container>
 							</div>
 							<div class="form-group" show-errors>
 								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<label for="phone">Телефон*</label>
-									<input type="text" class="form-control" name="lostAndFound.declarantPhone" ng-model="lostAndFound.declarantPhone" ng-required="true" />
+									<input type="text" name="lostAndFound.declarantPhone" ng-model="lostAndFound.declarantPhone" ng-required="true" />
 								</md-input-container>
 							</div>
 							<div class="form-group" show-errors>
 								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
 									<label for="email">Имейл*</label>
-									<input type="text" class="form-control" name="lostAndFound.declarantEmail" ng-model="lostAndFound.declarantEmail" ng-required="true" />
+									<input type="text" name="lostAndFound.declarantEmail" ng-model="lostAndFound.declarantEmail" ng-required="true" />
 								</md-input-container>
 							</div>
 							<div class="form-group">
@@ -214,6 +211,19 @@
 						</form>
 					</accordion-group>
 				</accordion>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>Как это работает?</h1>
+				<ol>
+					<li>Вы оставляете заявку о находке или пропаже на сайте, либо оператору по телефону.</li>
+					<li>Оператор обрабатывает базу данных и проверяет, нет ли ответной заявки по Вашему запросу.</li>
+					<li>Если вашу пропажу нашли, оператор связывается с владельцем пропажи и сообщает о найденном предмете.</li>
+					<li>Затем Вам необходимо оплатить 500 тг на Qiwi кошелек … за предоставление данной услуги.</li>
+					<li>После предоставления чека, оператор сообщает Вам телефон человека, нашедшего Ваш потерянный предмет.</li>
+					<li>Вы договариваетесь с этим человеком и возвращаете свой потерянный предмет.</li>
+				</ol>
 			</div>
 		</div>
 	</div>
