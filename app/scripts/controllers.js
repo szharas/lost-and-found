@@ -13,6 +13,7 @@ angular.module('lostAndFoundApp')
 		$scope.formType = 'lost';
 		$scope.formTypeRu = 'утери';
 		$scope.isFormOpen = false;
+		$scope.accordionBorderStyle = 'none';
 
 		$scope.selectCity = function (city) {
 			console.log('City selected:' + city);
@@ -33,9 +34,11 @@ angular.module('lostAndFoundApp')
 			console.log('setFormTypeAndToggleOpen called!');
 			if (!$scope.isFormOpen) {
 				$scope.isFormOpen = true;
+				$scope.accordionBorderStyle = '1px solid;';
 			} else {
 				if ($scope.formType === formType) {
 					$scope.isFormOpen = false;
+					$scope.accordionBorderStyle = 'none';
 				}
 			}
 
