@@ -8,7 +8,12 @@
 body {
 	padding: 0;
 	overflow-y: scroll; /* Enable showing of browser scrollbar by default */
-	height: 101%;
+	height: 100%;
+}
+
+html {
+	overflow: hidden;
+	height: 100%;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -90,18 +95,6 @@ body {
 }
 
 /* ---Shynggys's CSS--- */
-
-body {
-	padding-top: 70px;
-	font-size: 15px;
-	background-image: url("../images/bg3.jpg");
-}
-
-.navbar-default {
-	background-color: #FFD63A;
-	border-bottom: 4px solid #ECBA37;
-}
-
 .navbar-default .navbar-brand {
 	color: #414042;
 	font-family: 'Lobster', cursive;
@@ -116,19 +109,10 @@ body {
 	color: #414042;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	color: #414042;
-	background-color: #FAB80B;
-}
-
-.dropdown-menu {
-	background-color: #FFCB05;
-}
-
-h1,h2,h3,h4,h5,h6,p{
+h1, h2, h3, h4, h5, h6, p {
 	font-family: 'PT Sans', sans-serif;
 	color: #414042;
-	font-weight: normal!important;
+	font-weight: normal !important;
 }
 
 .navbar-default .navbar-toggle {
@@ -143,17 +127,15 @@ h1,h2,h3,h4,h5,h6,p{
 	border-color: #D7A31B;
 }
 
-.img-responsive{
+.img-responsive {
 	max-height: 200px;
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
 		color: #333;
 	}
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-		background-color: #FAB80B;
-	}
+
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -163,43 +145,66 @@ h1,h2,h3,h4,h5,h6,p{
 }
 
 /* Start: custom app CSS */
+body {
+	padding-top: 70px;
+	font-size: 15px;
+	background-image: url("../images/congruent_pentagon.png");
+}
+
+.navbar-default {
+	background-color: #B1F6CB;
+	border-bottom: 4px solid #009688;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	color: #414042;
+	background-color: #009688;
+}
+
+.dropdown-menu {
+	background-color: #B1F6CB;
+}
+
 .form-group {
 	margin-bottom: 0;
 }
+
 #btn_lost {
 	width: 100%;
-	background: #ED5B50;
+	background: #E91E63;
 	color: #FFF;
 }
+
 #btn_found {
 	width: 100%;
-	background: #0EB072;
+	background: #009688;
 	color: #FFF;
 }
+
 #btn_submit {
 	width: 100%;
-	background: #4285f4;
+	background: #2196F3;
 	color: #FFF;
 	margin: 20px 0;
 }
-/* End: custom app CSS */
 
+/* End: custom app CSS */
 .panel-default {
-	border-color: #FFD63A;
+	border-color: #009688;
 }
 
 label {
-  font-weight: normal;
+	font-weight: normal;
 }
 
 .panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .panel-heading + .panel-collapse > .list-group {
-  border-top: none;
+	border-top: none;
 }
 
-.panel-heading{
+.panel-heading {
 	display: none;
 }
 
-md-select-menu, md-select-menu md-content{
-  max-height: 600px!important;
+md-select-menu, md-select-menu md-content {
+	max-height: 600px !important;
 }
