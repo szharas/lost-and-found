@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lostAndFoundApp')
-	.controller('MainCtrl', function ($scope) {
+	.controller('MainCtrl', function ($scope, $mdToast) {
 		// Initialize variables
 		$scope.cities = ['Астана', 'Алматы'];
 		$scope.lostCategories = ['Документ', 'Портмоне/Сумка', 'Телефон/Планшет', 'Гос. номер', 'Печати/Штампы', 'Другое'];
@@ -14,6 +14,12 @@ angular.module('lostAndFoundApp')
 		$scope.formTypeRu = 'утери';
 		$scope.isFormOpen = false;
 		$scope.accordionBorderStyle = 'none';
+		$scope.toastPosition = {
+			bottom: true,
+			top: false,
+			left: false,
+			right: true
+		};
 
 		$scope.selectCity = function (city) {
 			console.log('City selected:' + city);
@@ -57,7 +63,20 @@ angular.module('lostAndFoundApp')
 			return ($scope.formType === 'found');
 		};
 
+		$scope.getToastPosition = function() {
+			return Object.keys($scope.toastPosition)
+				.filter(function(pos) { return $scope.toastPosition[pos]; })
+				.join(' ');
+		};
+
 		$scope.saveForm = function (lostAndFound) {
 			console.log('Saving object: ' + JSON.stringify(lostAndFound));
+
+			$mdToast.show(
+				$mdToast.simple()
+					.content('Заявка сохранена!')
+					.position($scope.getToastPosition())
+					.hideDelay(3000)
+			);
 		};
 	});
