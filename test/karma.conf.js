@@ -33,6 +33,7 @@ module.exports = function(config) {
       'bower_components/angular-aria/angular-aria.js',
       'bower_components/angular-material/angular-material.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-toastr/dist/angular-toastr.tpls.js',
       // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',

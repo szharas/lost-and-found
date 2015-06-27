@@ -19,7 +19,8 @@ angular
 		'ngTouch',
 		'ui.bootstrap',
 		'ui.bootstrap.showErrors',
-		'ngMaterial'
+		'ngMaterial',
+		'toastr'
 	])
 	.config(function ($routeProvider) {
 		$routeProvider
