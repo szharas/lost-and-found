@@ -2,7 +2,7 @@
 <html ng-app="lostAndFoundApp">
 <head>
 	<meta charset="utf-8">
-	<title>naidi.kz</title>
+	<title>Бюро Находок Казахстана</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -19,6 +19,7 @@
 	<!-- Google font Lobster and Open Sans Condensed -->
 	<link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 
 	<!-- build:js(.) scripts/vendor.js -->
 	<!-- bower:js -->
@@ -50,67 +51,65 @@
 		your browser</a> to improve your experience.</p>
 	<![endif]-->
 	<!-- Add your site or application content here -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">buronahodok.kz</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-							<span class="glyphicon glyphicon-map-marker" style="padding-right:5px;"></span>{{lostAndFound.city}}&nbsp;<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu" role="menu">
-							<li ng-repeat="city in cities">
-								<a ng-click="selectCity(city)">{{city}}</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<a href="">
-							<span class="glyphicon glyphicon-earphone" style="padding-right:5px;"></span>Служба поддержки: +7 (778) 664-9388
-						</a>
-					</li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-	</nav>
 	<div class="container">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">buronahodok.kz</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								<span class="glyphicon glyphicon-map-marker"></span>{{lostAndFound.city}}&nbsp;<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li ng-repeat="city in cities">
+									<a href="" ng-click="selectCity(city)">{{city}}</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="" id="contactInfo">
+								<span class="glyphicon glyphicon-earphone"></span>&nbsp;Служба поддержки: +7 (778) 664-9388
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+		</nav>
 		<div class="row">
-			<div class="col-xs-12 col-sm-8">
+			<div class="col-xs-12 col-md-8">
 				<h1>Поможем найти утерянное!</h1>
 				<p>Ежедневно люди теряют, либо находят ценные документы или предметы. Восстановление документов или замена
 				пропажи - это сложный, затратный и долгий процесс. Наш проект поможет Вам найти свою пропажу или вернуть найденное. Не оставайтесь в стороне, помогайте тем, кто нуждается в Вашей помощи и Вам воздастся втройне!</p>
 			</div>
-			<div class="hidden-xs col-sm-4">
+			<div class="hidden-xs col-md-4">
 				<img src="images/wallet.png" class="img-responsive" alt="Responsive image">
 			</div>
 		</div>
 		<br>
 		<div class="row">
-			<div class="column col-md-6 col-xs-6">
+			<div class="col-md-6 col-xs-6">
 				<p>
-					<md-button id="btn_lost" class="md-raised md-primary" ng-click="setFormTypeAndToggleOpen('lost', 'утери')">
+					<md-button id="btn_lost" class="md-primary" ng-click="setFormTypeAndToggleOpen('lost', 'утери')">
 						Утеряно
 					</md-button>
 				</p>
 			</div>
-			<div class="column col-md-6 col-xs-6">
+			<div class="col-md-6 col-xs-6">
 				<p>
-					<md-button id="btn_found" class="md-raised md-primary" ng-click="setFormTypeAndToggleOpen('found', 'находки')">
+					<md-button id="btn_found" class="md-primary" ng-click="setFormTypeAndToggleOpen('found', 'находки')">
 						Найдено
 					</md-button>
 				</p>
@@ -124,7 +123,7 @@
 							<br>
 							<h3 class="text-primary text-center">Предмет {{formTypeRu}}</h3>
 							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-8 col-xs-12">
+								<div class="col-md-offset-2 col-md-8 col-xs-12">
 									<md-select placeholder="Категория {{formTypeRu}}*"
 											   id="lostAndFound.lostCategory"
 											   ng-model="lostAndFound.lostCategory">
@@ -137,7 +136,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-8 col-xs-12">
+								<div class="col-md-offset-2 col-md-8 col-xs-12">
 									<md-select placeholder="Подкатегория*"
 											   id="lostAndFound.lostSubCategory"
 											   ng-model="lostAndFound.lostSubCategory">
@@ -151,58 +150,58 @@
 							</div>
 							<br>
 							<h3 class="text-primary text-center">Данные {{formTypeRu}}</h3>
-							<div class="form-group" show-errors>
-								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="name">Имя*</label>
 									<input type="text" name="lostAndFound.name" ng-model="lostAndFound.name" ng-required="true" />
 								</md-input-container>
 							</div>
-							<div class="form-group" show-errors>
-								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="surname">Фамилия*</label>
 									<input type="text" name="lostAndFound.surname" ng-model="lostAndFound.surname" ng-required="true" />
 								</md-input-container>
 							</div>
-							<div class="form-group" show-errors>
-								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="date">Дата {{formTypeRu}}*</label>
 									<input type="text" name="lostAndFound.lostDate" ng-model="lostAndFound.lostDate" ng-required="true" />
 								</md-input-container>
 							</div>
-							<div class="form-group" show-errors>
-								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="location">Место/Адрес {{formTypeRu}}*</label>
 									<input type="text" name="lostAndFound.lostAddress" ng-model="lostAndFound.lostAddress" ng-required="true" />
 								</md-input-container>
 							</div>
-							<div class="form-group" show-errors>
-								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="description">Описание*</label>
 									<input type="text" name="lostAndFound.description" ng-model="lostAndFound.description" ng-required="true" />
 								</md-input-container>
 							</div>
 							<br>
 							<h3 class="text-primary text-center">Как с вами связаться</h3>
-							<div class="form-group" show-errors>
-								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="name">Имя*</label>
 									<input type="text" name="lostAndFound.declarantName" ng-model="lostAndFound.declarantName" ng-required="true" />
 								</md-input-container>
 							</div>
-							<div class="form-group" show-errors>
-								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="phone">Телефон*</label>
 									<input type="text" name="lostAndFound.declarantPhone" ng-model="lostAndFound.declarantPhone" ng-required="true" />
 								</md-input-container>
 							</div>
-							<div class="form-group" show-errors>
-								<md-input-container class="col-sm-offset-2 col-sm-8 col-xs-12">
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="email">Имейл*</label>
 									<input type="text" name="lostAndFound.declarantEmail" ng-model="lostAndFound.declarantEmail" ng-required="true" />
 								</md-input-container>
 							</div>
 							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-3">
+								<div class="col-md-offset-2 col-md-3">
 									<md-button id="btn_submit" class="md-raised md-primary" ng-click="saveForm(lostAndFound)">
 										Добавить
 									</md-button>
@@ -214,7 +213,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-md-12 col-xs-12">
 				<h1>Как это работает?</h1>
 				<ol>
 					<li>Вы оставляете заявку о находке или пропаже на сайте, либо оператору по телефону.</li>

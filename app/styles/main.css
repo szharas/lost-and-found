@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-	border-color: #D7A31B;
+	border-color: #009688;
 }
 
 .img-responsive {
@@ -173,12 +173,14 @@ body {
 	width: 100%;
 	background: #E91E63;
 	color: #FFF;
+	margin: 0px;
 }
 
 #btn_found {
 	width: 100%;
 	background: #009688;
 	color: #FFF;
+	margin: 0px;
 }
 
 #btn_submit {
@@ -207,4 +209,8 @@ label {
 
 md-select-menu, md-select-menu md-content {
 	max-height: 600px !important;
+}
+
+#contactInfo {
+	margin-right: 16px !important;
 }
