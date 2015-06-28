@@ -122,7 +122,7 @@
 			<div class="col-md-12 col-xs-12">
 				<accordion>
 					<accordion-group is-open="isFormOpen" ng-style="{'border': accordionBorderStyle}">
-						<form class="form-horizontal" name="lostAndFoundForm" novalidate>
+						<form class="form-horizontal" name="lostAndFoundForm" novalidate="">
 							<br>
 							<h3 class="text-primary text-center">Предмет {{formTypeRu}}</h3>
 							<div class="form-group">
@@ -156,31 +156,51 @@
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="name">Имя*</label>
-									<input type="text" name="lostAndFound.name" ng-model="lostAndFound.name" ng-required="true" />
+									<input type="text" name="lostAndFoundFormName" ng-model="lostAndFound.name" ng-required="true" />
+									<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
+										 ng-show="lostAndFoundForm.lostAndFoundFormName.$touched && lostAndFoundForm.lostAndFoundFormName.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
 								</md-input-container>
 							</div>
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="surname">Фамилия*</label>
-									<input type="text" name="lostAndFound.surname" ng-model="lostAndFound.surname" ng-required="true" />
+									<input type="text" name="lostAndFoundSurname" ng-model="lostAndFound.surname" ng-required="true" />
+									<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
+										 ng-show="lostAndFoundForm.lostAndFoundSurname.$touched && lostAndFoundForm.lostAndFoundSurname.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
 								</md-input-container>
 							</div>
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="date">Дата {{formTypeRu}}*</label>
-									<input type="text" name="lostAndFound.lostDate" ng-model="lostAndFound.lostDate" ng-required="true" />
+									<input type="date" locale="ru" name="lostAndFoundLostDate" ng-model="lostAndFound.lostDate" ng-required="true" />
+									<div ng-messages="lostAndFoundForm.lostAndFoundLostDate.$error"
+										 ng-show="lostAndFoundForm.lostAndFoundLostDate.$touched && lostAndFoundForm.lostAndFoundLostDate.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
 								</md-input-container>
 							</div>
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="location">Место/Адрес {{formTypeRu}}*</label>
-									<input type="text" name="lostAndFound.lostAddress" ng-model="lostAndFound.lostAddress" ng-required="true" />
+									<input type="text" name="lostAndFoundLostAddress" ng-model="lostAndFound.lostAddress" ng-required="true" />
+									<div ng-messages="lostAndFoundForm.lostAndFoundLostAddress.$error"
+										 ng-show="lostAndFoundForm.lostAndFoundLostAddress.$touched && lostAndFoundForm.lostAndFoundLostAddress.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
 								</md-input-container>
 							</div>
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="description">Описание*</label>
-									<input type="text" name="lostAndFound.description" ng-model="lostAndFound.description" ng-required="true" />
+									<input type="text" name="lostAndFoundDescription" ng-model="lostAndFound.description" ng-required="true" />
+									<div ng-messages="lostAndFoundForm.lostAndFoundDescription.$error"
+										 ng-show="lostAndFoundForm.lostAndFoundDescription.$touched && lostAndFoundForm.lostAndFoundDescription.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
 								</md-input-container>
 							</div>
 							<br>
@@ -188,19 +208,31 @@
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="name">Имя*</label>
-									<input type="text" name="lostAndFound.declarantName" ng-model="lostAndFound.declarantName" ng-required="true" />
+									<input type="text" name="lostAndFoundDeclarantName" ng-model="lostAndFound.declarantName" ng-required="true" />
+									<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantName.$error"
+										 ng-show="lostAndFoundForm.lostAndFoundDeclarantName.$touched && lostAndFoundForm.lostAndFoundDeclarantName.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
 								</md-input-container>
 							</div>
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="phone">Телефон*</label>
-									<input type="text" name="lostAndFound.declarantPhone" ng-model="lostAndFound.declarantPhone" ng-required="true" />
+									<input type="text" name="lostAndFoundDeclarantPhone" ng-model="lostAndFound.declarantPhone" ng-required="true" />
+									<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantPhone.$error"
+										 ng-show="lostAndFoundForm.lostAndFoundDeclarantPhone.$touched && lostAndFoundForm.lostAndFoundDeclarantPhone.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
 								</md-input-container>
 							</div>
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="email">Имейл*</label>
-									<input type="text" name="lostAndFound.declarantEmail" ng-model="lostAndFound.declarantEmail" ng-required="true" />
+									<input type="email" name="lostAndFoundDeclarantEmail" ng-model="lostAndFound.declarantEmail" ng-required="true" />
+									<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantEmail.$error"
+										 ng-show="lostAndFoundForm.lostAndFoundDeclarantEmail.$touched && lostAndFoundForm.lostAndFoundDeclarantEmail.$invalid">
+										<div ng-message="email">Неверный имейл (электронная почта)</div>
+									</div>
 								</md-input-container>
 							</div>
 							<div class="form-group">
