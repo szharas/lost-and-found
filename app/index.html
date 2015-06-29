@@ -14,7 +14,8 @@
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
 	<link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css' />
-	<link rel="stylesheet" href="styles/main.css">
+	<!-- <link rel="stylesheet" href="styles/main.css"> -->
+	<link rel="stylesheet" href="styles/styles.css">
 	<!-- endbuild -->
 
 	<!-- Google font Lobster and Open Sans Condensed -->
@@ -54,51 +55,48 @@
 		your browser</a> to improve your experience.</p>
 	<![endif]-->
 	<!-- Add your site or application content here -->
-	<div class="container">
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">buronahodok.kz</a>
-				</div>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Бюро находок</a>
+			</div>
 
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-								<span class="glyphicon glyphicon-map-marker"></span>{{lostAndFound.city}}&nbsp;<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li ng-repeat="city in cities">
-									<a href="" ng-click="selectCity(city)">{{city}}</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="" id="contactInfo">
-								<span class="glyphicon glyphicon-earphone"></span>&nbsp;Служба поддержки: +7 (778) 664-9388
-							</a>
-						</li>
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							<span class="glyphicon glyphicon-map-marker"></span>{{lostAndFound.city}}&nbsp;<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu">
+							<li ng-repeat="city in cities">
+								<a href="" ng-click="selectCity(city)">{{city}}</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="" id="contactInfo">
+							<span class="glyphicon glyphicon-earphone"></span>&nbsp;Служба поддержки: +7 (778) 664-9388
+						</a>
+					</li>
+				</ul>
 			</div>
-		</nav>
+			<!-- /.navbar-collapse -->
+		</div>
+	</nav>
+	<div class="container" id="intro">
 		<div class="row">
-			<div class="col-xs-12 col-md-8">
-				<h1>Поможем найти утерянное!</h1>
-				<p>Ежедневно люди теряют, либо находят ценные документы или предметы. Восстановление документов или замена
-				пропажи - это сложный, затратный и долгий процесс. Наш проект поможет Вам найти свою пропажу или вернуть найденное. Не оставайтесь в стороне, помогайте тем, кто нуждается в Вашей помощи и Вам воздастся втройне!</p>
-			</div>
-			<div class="hidden-xs col-md-4">
-				<img src="images/wallet.png" class="img-responsive" alt="Responsive image">
+			<div class="col-xs-12">
+				<p class="text-center" id="top_info">Поможем найти утерянное!</p>
+				<h1 class="text-center">Онлайн бюро находок</h1>
+				<p class="text-center" id="bottom_info">Единая база данных по Казахстану</p>
 			</div>
 		</div>
 		<br>

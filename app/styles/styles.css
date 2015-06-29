@@ -1,0 +1,88 @@
+/*import the fonts used on website*/
+@font-face {
+	font-family: 'Fregat';
+	src: url('fonts/fregat_bold.woff') format('woff');
+}
+
+body{
+	background-color: #90c695;
+	background-image: url(../images/bg-texture-2.png),-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(255,255,255,0.3)), color-stop(100%, rgba(255,255,255,0)));
+	background-image: url(../images/bg-texture-2.png),-webkit-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
+	background-image: url(../images/bg-texture-2.png),-moz-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
+	background-image: url(../images/bg-texture-2.png),-o-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
+	background-image: url(../images/bg-texture-2.png),radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
+	height: auto;
+}
+
+.navbar-default {
+	background-color: transparent; 
+	border-color: transparent;
+	padding-top: 2em;
+	color: #fff!important;
+}
+
+.navbar-brand{
+	font-family: 'Fregat';
+	font-size: 3em;
+	font-weight: bold;
+	color: #fff!important;
+}
+
+.navbar-default .navbar-nav > li > a{
+	color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+	font-family: 'Comfortaa';
+}
+
+.navbar-nav > li > a {
+	padding-top: 18px;
+	padding-bottom: 15px;
+	font-size: 1.2em;
+}
+
+.navbar-toggle {
+	border: none!important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #FFF;
+}
+
+.navbar-toggle .icon-bar {
+	display: block;
+	width: 25px;
+	height: 4px;
+	border-radius: 3px;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+	background-color: transparent;
+}
+
+#intro {
+	padding-top: 2em;
+	color: #fff;
+}
+
+#intro p{
+	font-family: 'Comfortaa';
+}
+
+#top_info{
+	font-size: 1.8em;
+}
+
+#intro h1{
+	text-transform: uppercase;
+	font-family: 'Roboto';
+	font-weight: bold;
+	font-size: 5em;
+	margin-bottom: 20px;
+}
+
+#bottom_info{
+	font-size: 1.4em;
+	color: #333333;
+}
