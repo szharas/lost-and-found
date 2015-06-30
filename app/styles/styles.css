@@ -4,6 +4,11 @@
 	src: url('fonts/fregat_bold.woff') format('woff');
 }
 
+@font-face {
+	font-family: 'Roboto-Medium';
+	src: url('fonts/Roboto-Medium.ttf') format('truetype');
+}
+
 body{
 	background-color: #90c695;
 	background-image: url(../images/bg-texture-2.png),-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(255,255,255,0.3)), color-stop(100%, rgba(255,255,255,0)));
@@ -86,3 +91,37 @@ body{
 	font-size: 1.4em;
 	color: #333333;
 }
+
+#btn_lost, #btn_found{
+	padding: 18px 75px;
+  	font-size: 15px;
+  	color: #fff;
+  	font-family: 'Roboto-Medium';
+  	border: 2px solid #fafafa;
+}
+@media (min-width: 768px) {
+	#btn_lost{
+		float: right;
+	}
+	#btn_found{
+		float: left;
+	}
+}
+
+#btn_lost{
+	background-color: #ef6464;
+}
+
+#btn_found{
+	background-color: #22b57e;
+}
+
+.panel-heading{
+	display: none;
+}
+
+
+
+
+
+
