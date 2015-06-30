@@ -14,6 +14,7 @@ angular.module('lostAndFoundApp')
 		$scope.formTypeRu = 'утери';
 		$scope.isFormOpen = false;
 		$scope.accordionBorderStyle = 'none';
+		$scope.isFormSumbitted = false;
 
 		$scope.selectCity = function (city) {
 			console.log('City selected:' + city);
@@ -57,9 +58,14 @@ angular.module('lostAndFoundApp')
 			return ($scope.formType === 'found');
 		};
 
-		$scope.saveForm = function (lostAndFound) {
+		$scope.saveForm = function (lostAndFound, lostAndFoundForm) {
 			console.log('Saving object: ' + JSON.stringify(lostAndFound));
+			$scope.isFormSumbitted = true;
 
-			toastr.success('Заявка сохранена!');
+			if (!lostAndFoundForm.$valid) {
+				toastr.error('Ошибка  в заявке!');
+			} else {
+				toastr.success('Заявка сохранена!');
+			}
 		};
 	});
