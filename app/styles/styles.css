@@ -116,6 +116,12 @@ body{
 	background-color: #22b57e;
 }
 
+.btn_hint{
+	font-family: 'Roboto';
+	font-style: italic;
+	font-size: 15px;
+}
+
 .panel-heading{
 	display: none;
 }
