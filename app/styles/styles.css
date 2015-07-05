@@ -1,4 +1,5 @@
-/*import the fonts used on website*/
+/*   --- CSS Settings ---   */
+/* import the fonts used on website */
 @font-face {
 	font-family: 'Fregat';
 	src: url('fonts/fregat_bold.woff') format('woff');
@@ -9,13 +10,18 @@
 	src: url('fonts/Roboto-Medium.ttf') format('truetype');
 }
 
+/* removes blue focus outline */
+.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
+  outline: none;
+}
+
 body{
-	background-color: #90c695;
-	background-image: url(../images/bg-texture-2.png),-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(255,255,255,0.3)), color-stop(100%, rgba(255,255,255,0)));
-	background-image: url(../images/bg-texture-2.png),-webkit-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
-	background-image: url(../images/bg-texture-2.png),-moz-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
-	background-image: url(../images/bg-texture-2.png),-o-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
-	background-image: url(../images/bg-texture-2.png),radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
+	background-color: #83bf88;
+	background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(255,255,255,0.3)), color-stop(100%, rgba(255,255,255,0)));
+	background-image: -webkit-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
+	background-image: -moz-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
+	background-image: -o-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
+	background-image: radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
 	height: auto;
 }
 
@@ -55,6 +61,16 @@ body{
 	background-color: #FFF;
 }
 
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #333;
+  background-color: transparent;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-radius: 6px;
+}
+
 .navbar-toggle .icon-bar {
 	display: block;
 	width: 25px;
@@ -92,12 +108,42 @@ body{
 	color: #333333;
 }
 
+.buttons_row{
+	position: relative;
+}
+
+.btn_arrow{
+	position: absolute;
+}
+
+@media (min-width: 768px){
+	.btn_arrow{
+		left: 18%;
+		top: 12%;
+	}
+}
+
+@media (min-width: 992px) {
+	.btn_arrow{
+		left: 25%;
+		top: 12%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.btn_arrow{
+		left: 29%;
+		top: 12%;
+	}
+}
+
 #btn_lost, #btn_found{
 	padding: 18px 75px;
   	font-size: 15px;
   	color: #fff;
   	font-family: 'Roboto-Medium';
   	border: 2px solid #fafafa;
+  	border-radius: 30px;
 }
 @media (min-width: 768px) {
 	#btn_lost{
@@ -113,7 +159,7 @@ body{
 }
 
 #btn_found{
-	background-color: #22b57e;
+	background-color: #5EBD8B;
 }
 
 .btn_hint{

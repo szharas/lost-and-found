@@ -83,7 +83,7 @@
 					</li>
 					<li>
 						<a href="" id="contactInfo">
-							<span class="glyphicon glyphicon-earphone"></span>&nbsp;Служба поддержки: +7 (778) 664-9388
+							<span class="glyphicon glyphicon-earphone"></span>&nbsp;<span class="hidden-sm">Служба поддержки: </span>+7 (778) 664-9388
 						</a>
 					</li>
 				</ul>
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 		<br>
-		<div class="row">
+		<div class="row buttons_row">
 			<div class="col-sm-6 col-xs-12">
 					<md-button id="btn_lost" class="md-primary btn btn-lg col-md-6 col-sm-8 col-xs-12" ng-click="setFormTypeAndToggleOpen('lost', 'утери')">
 						Утеряно
@@ -111,9 +111,15 @@
 						Найдено
 					</md-button>
 			</div>
+			<div class="btn_arrow hidden-xs">
+				<img src="../images/arrow.png" height="45">
+			</div>
 			<div class="col-xs-12">
 				<br>
 				<p class="text-center btn_hint">Нажмите на кнопку чтобы заявить о пропаже или находке</p>
+			</div>
+			<div class="col-sm-12 pics hidden-xs">
+				<img src="../images/pics.png" class="img-responsive center-block">
 			</div>
 		</div>
 		<div class="row">
