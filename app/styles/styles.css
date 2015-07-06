@@ -10,19 +10,38 @@
 	src: url('fonts/Roboto-Medium.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('fonts/Comfortaa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Comfortaa-Light';
+	src: url('fonts/Comfortaa-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Comfortaa-Bold';
+	src: url('fonts/Comfortaa-Bold.ttf') format('truetype');
+}
+
 /* removes blue focus outline */
 .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
   outline: none;
 }
+/* --- End of CSS Settings --- */
 
 body{
-	background-color: #83bf88;
+	height: auto;
+}
+
+#header_wrap{
+	background-color: #4cb0df;
 	background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(255,255,255,0.3)), color-stop(100%, rgba(255,255,255,0)));
 	background-image: -webkit-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
 	background-image: -moz-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
 	background-image: -o-radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
 	background-image: radial-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0));
-	height: auto;
 }
 
 .navbar-default {
@@ -82,12 +101,12 @@ body{
 	background-color: transparent;
 }
 
-#intro {
+#header_section {
 	padding-top: 2em;
 	color: #fff;
 }
 
-#intro p{
+#header_section p{
 	font-family: 'Comfortaa';
 }
 
@@ -95,7 +114,7 @@ body{
 	font-size: 1.8em;
 }
 
-#intro h1{
+#header_section h1{
 	text-transform: uppercase;
 	font-family: 'Roboto';
 	font-weight: bold;
@@ -108,7 +127,7 @@ body{
 	color: #333333;
 }
 
-.buttons_row{
+.header_content{
 	position: relative;
 }
 
@@ -119,21 +138,21 @@ body{
 @media (min-width: 768px){
 	.btn_arrow{
 		left: 18%;
-		top: 12%;
+		top: 40.5%%;
 	}
 }
 
 @media (min-width: 992px) {
 	.btn_arrow{
-		left: 25%;
-		top: 12%;
+		left: 27%;
+		top: 40.5%%;
 	}
 }
 
 @media (min-width: 1200px) {
 	.btn_arrow{
-		left: 29%;
-		top: 12%;
+		left: 30%;
+		top: 40.5%%;
 	}
 }
 
@@ -143,7 +162,7 @@ body{
   	color: #fff;
   	font-family: 'Roboto-Medium';
   	border: 2px solid #fafafa;
-  	border-radius: 30px;
+  	border-radius: 10px;
 }
 @media (min-width: 768px) {
 	#btn_lost{
@@ -155,11 +174,11 @@ body{
 }
 
 #btn_lost{
-	background-color: #ef6464;
+	background-color: #F97373;
 }
 
 #btn_found{
-	background-color: #5EBD8B;
+	background-color: #2CD8AA;
 }
 
 .btn_hint{
@@ -172,7 +191,35 @@ body{
 	display: none;
 }
 
+.header_content .panel-group {
+	margin-bottom: 0;
+}
 
+.how_it_works{
+	background-color: #fff;
+	color: #333;
+}
+
+#content_wrap{
+	color: #333;
+	font-family: 'Comfortaa-Light';
+}
+
+.how_it_works h2{
+	padding-top: 25px;
+	text-align: right;
+}
+
+.how_it_works p{
+	text-align: right;
+	font-family: 'Comfortaa';
+	color: #9e9d97;
+	font-size: 1.2em;
+}
+
+.how_it_works img{
+	max-height: 300px;
+}
 
 
 
