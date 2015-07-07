@@ -174,11 +174,11 @@ body{
 }
 
 #btn_lost{
-	background-color: #F97373;
+	background-color: #FA6F6F;
 }
 
 #btn_found{
-	background-color: #2CD8AA;
+	background-color: #4AD8B2;
 }
 
 .btn_hint{
@@ -203,18 +203,18 @@ body{
 }
 
 #about_us, #how_it_works{
-	color: #333;
 	font-family: 'Comfortaa-Light';
 }
 
 #about_us h2{
+	color: #333;
 	padding-top: 25px;
 	text-align: right;
 }
 
 #about_us p{
 	text-align: right;
-	font-family: 'Comfortaa';
+	font-family: 'Comfortaa-Light';
 	color: #9e9d97;
 	font-size: 1.2em;
 }
@@ -230,12 +230,13 @@ body{
 }
 
 #how_it_works h2{
+	color: #333;
 	margin: 0;
 	padding-bottom: 30px;
 }
 
 #how_it_works p{
-	font-family: 'Comfortaa';
+	font-family: 'Comfortaa-Light';
 	color: #9e9d97;
 	font-size: 1.2em;
 }
