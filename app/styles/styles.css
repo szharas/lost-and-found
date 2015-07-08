@@ -131,6 +131,11 @@ body{
 	position: relative;
 }
 
+#header_section .panel-group{
+	margin-top: 20px;
+	color: #333;
+}
+
 .btn_arrow{
 	position: absolute;
 }
@@ -202,7 +207,7 @@ body{
 	padding-bottom: 50px;
 }
 
-#about_us, #how_it_works{
+#about_us, #how_it_works, #contact_us, #footer{
 	font-family: 'Comfortaa-Light';
 }
 
@@ -212,10 +217,13 @@ body{
 	text-align: right;
 }
 
+.blue_text{
+	color:#5bb5de!important;
+}
+
 #about_us p{
 	text-align: right;
-	font-family: 'Comfortaa-Light';
-	color: #9e9d97;
+	color: #555;
 	font-size: 1.2em;
 }
 
@@ -236,8 +244,7 @@ body{
 }
 
 #how_it_works p{
-	font-family: 'Comfortaa-Light';
-	color: #9e9d97;
+	color: #555;
 	font-size: 1.2em;
 }
 
@@ -263,4 +270,43 @@ body{
 .carousel-indicators .active {
 	background-color: #9D9D9D;
 }
+
+#contact_us{
+	background-color: #fff;
+	color: #333;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#contact_us h2{
+	color: #333;
+	padding-top: 25px;
+}
+
+#contact_us p{
+	color: #555;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+#footer{
+	background-color: #333;
+	color: #9e9d97;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+#footer a {
+  color: #5bb5de;
+}
+
+#btn_contact_us{
+	padding: 18px 75px;
+	background-color:#5bb5de;
+  	font-size: 15px;
+  	color: #fff;
+  	font-family: 'Roboto-Medium';
+  	border-radius: 10px;
+}
+
 

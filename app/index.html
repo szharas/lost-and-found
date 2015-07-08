@@ -240,7 +240,6 @@
 					<img src="../images/arrow.png" height="45">
 				</div>
 				<div class="col-xs-12">
-					<br>
 					<p class="text-center btn_hint">Нажмите на кнопку чтобы заявить о пропаже или находке</p>
 				</div>
 				<div class="col-sm-12 hidden-xs">
@@ -253,7 +252,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-7 col-xs-12">
-					<h2>О нас.<br>Поможем <strong>найти</strong> утерянное.</h2>
+					<h2><span class="blue_text">О нас.</span><br>Поможем найти утерянное.</h2>
 					<p>Ежедневно люди теряют, либо находят ценные документы или предметы. Bосстановление документов или замена пропажи - это сложный, затратный и долгий процесс. Наш проект поможет вам найти свою пропажу или вернуть найденное. Не оставайтесь в стороне, помогайте тем, кто нуждается в вашей помощи и вам воздастся втройне!</p>
 				</div>
 				<div class="col-sm-5 col-xs-12">
@@ -266,7 +265,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="text-center">Как это работает?</h2>
+					<h2 class="text-center blue_text">Как это работает?</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -301,11 +300,11 @@
 							</div>
 							<div class="item">
 								<div class="col-sm-5 col-sm-offset-1 col-xs-12">
-									<img src="../images/call_center.png" class="img-responsive center-block">
+									<img src="../images/agreement.png" class="img-responsive center-block">
 								</div>
 								<div class="col-sm-4 col-xs-12">
-									<h3>2. Обработка заявки</h3>
-									<p>Оператор обрабатывает заявку по базе данных и проверяет, нет ли ответной заявки по Вашему запросу. Если вашу пропажу нашли, оператор связывается с владельцем пропажи и сообщает о найденном предмете.</p>
+									<h3>3. Bозврат</h3>
+									<p>После предоставления оператором контактных данных нашедшего человека, вы договариваетесь с этим человеком и возвращаете свой потерянный предмет.</p>
 								</div>
 							</div>
 						</div>
@@ -320,6 +319,59 @@
 							<span class="sr-only">Next</span>
 						</a>
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="contact_us">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2 col-xs-12">
+					<h2 class="text-center blue_text">Bы что-то нашли или потеряли?</h2>
+					<p>Для подачи заявки по телефону оставьте свои контактные данные и наш специалист свяжется с вами в ближайшее время.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4 col-xs-12">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<md-input-container>
+								<label for="name">Имя*</label>
+								<input type="text" name="lostAndFoundFormName" ng-model="lostAndFound.name" ng-required="true" />
+								<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
+									 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundFormName.$touched) && lostAndFoundForm.lostAndFoundFormName.$invalid">
+									<div ng-message="required">Обязательное поле</div>
+								</div>
+							</md-input-container>
+						</div>
+						<div class="form-group">
+							<md-input-container>
+								<label for="surname">Телефон*</label>
+								<input type="text" name="lostAndFoundSurname" ng-model="lostAndFound.surname" ng-required="true" />
+								<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
+									 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundSurname.$touched) && lostAndFoundForm.lostAndFoundSurname.$invalid">
+									<div ng-message="required">Обязательное поле</div>
+								</div>
+							</md-input-container>
+						</div>
+						<div class="form-group">
+							<div>
+								<md-button id="btn_contact_us" class="md-primary btn btn-lg col-xs-12">
+									Добавить
+								</md-button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<p>© 2015 Онлайн-бюро находок. <a href="http://buronahodok.kz/">buronahodok.kz</a>.</p>
 				</div>
 			</div>
 		</div>
