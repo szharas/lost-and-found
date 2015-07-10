@@ -8,9 +8,9 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css(.) styles/vendor.css -->
 	<!-- bower:css -->
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
-	<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+	<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
@@ -21,7 +21,7 @@
 	<!-- Google font Lobster and Open Sans Condensed -->
 	<link href='http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700"  rel='stylesheet' type='text/css'>
 
 	<!-- build:js(.) scripts/vendor.js -->
 	<!-- bower:js -->
@@ -256,8 +256,8 @@
 								</md-input-container>
 							</div>
 							<div class="form-group">
-								<div class="col-md-offset-2 col-md-3">
-									<md-button id="btn_submit" type="submit" class="md-raised md-primary">
+								<div class="col-sm-4 col-sm-offset-4">
+									<md-button id="btn_submit" type="submit" class="md-primary btn btn-lg col-xs-12">
 										Добавить
 									</md-button>
 								</div>
@@ -352,11 +352,11 @@
 					</div>
 
 					<!-- Controls -->
-					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" ng-non-bindable>
 						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 						<span class="sr-only">Previous</span>
 					</a>
-					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" ng-non-bindable>
 						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 						<span class="sr-only">Next</span>
 					</a>

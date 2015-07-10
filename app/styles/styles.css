@@ -45,7 +45,7 @@ body{
 }
 
 .navbar-default {
-	background-color: transparent; 
+	background-color: transparent;
 	border-color: transparent;
 	padding-top: 2em;
 	color: #fff!important;
@@ -300,7 +300,7 @@ body{
   color: #5bb5de;
 }
 
-#btn_contact_us{
+#btn_contact_us {
 	padding: 18px 75px;
 	background-color:#5bb5de;
   	font-size: 15px;
@@ -308,5 +308,17 @@ body{
   	font-family: 'Roboto-Medium';
   	border-radius: 10px;
 }
+
+
+/* Start: added by Baurzhan */
+#btn_submit {
+	padding: 18px 75px;
+	background-color:#5bb5de;
+	font-size: 15px;
+	color: #fff;
+	font-family: 'Roboto-Medium';
+	border-radius: 10px;
+}
+/* End: added by Baurzhan */
 
 
