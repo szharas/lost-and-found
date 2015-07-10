@@ -8,9 +8,9 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css(.) styles/vendor.css -->
 	<!-- bower:css -->
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-	<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+	<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
@@ -50,344 +50,392 @@
 	<!-- endbuild -->
 </head>
 <body ng-controller="MainCtrl" ng-cloak>
-	<!--[if lt IE 7]>
-	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-		your browser</a> to improve your experience.</p>
-	<![endif]-->
-	<!-- Add your site or application content here -->
-	<div id="header_wrap">
-		<nav class="navbar navbar-default">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Бюро находок</a>
-				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-								<span class="glyphicon glyphicon-map-marker"></span>{{lostAndFound.city}}&nbsp;<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu" role="menu">
-								<li ng-repeat="city in cities">
-									<a href="" ng-click="selectCity(city)">{{city}}</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="" id="contactInfo">
-								<span class="glyphicon glyphicon-earphone"></span>&nbsp;<span class="hidden-sm">Служба поддержки: </span>+7 (778) 664-9388
-							</a>
-						</li>
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+	your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Add your site or application content here -->
+<div id="header_wrap">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+						aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Бюро находок</a>
 			</div>
-		</nav>
-		<div class="container" id="header_section">
-			<div class="row header_content">
-				<div class="col-xs-12">
-					<p class="text-center" id="top_info">Поможем найти утерянное!</p>
-					<h1 class="text-center">Онлайн бюро находок</h1>
-					<p class="text-center" id="bottom_info">Единая база данных по Казахстану</p>
-				</div>
-				<div class="col-sm-6 col-xs-12">
-						<md-button id="btn_lost" class="md-primary btn btn-lg col-md-6 col-sm-8 col-xs-12" ng-click="setFormTypeAndToggleOpen('lost', 'утери')">
-							Утеряно
-						</md-button>
-				</div>
-				<div class="col-sm-6 col-xs-12">
-						<md-button id="btn_found" class="md-primary btn btn-lg col-md-6 col-sm-8 col-xs-12" ng-click="setFormTypeAndToggleOpen('found', 'находки')">
-							Найдено
-						</md-button>
-				</div>
-				<div class="col-md-12 col-xs-12">
-					<accordion>
-						<accordion-group is-open="isFormOpen" ng-style="{'border': accordionBorderStyle}">
-							<form class="form-horizontal" name="lostAndFoundForm"  ng-submit="saveForm(lostAndFound, lostAndFoundForm)" novalidate="">
-								<br>
-								<h3 class="text-primary text-center">Предмет {{formTypeRu}}</h3>
-								<div class="form-group">
-									<div class="col-md-offset-2 col-md-8 col-xs-12">
-										<md-select placeholder="Категория {{formTypeRu}}*"
-												   id="lostAndFound.lostCategory"
-												   ng-model="lostAndFound.lostCategory">
-											<md-option ng-repeat="category in lostCategories"
-													   ng-click="selectLostCategory(category)"
-													   value="{{category}}">
-												{{category}}
-											</md-option>
-										</md-select>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							<span class="glyphicon glyphicon-map-marker"></span>{{lostAndFound.city}}&nbsp;<span
+							class="caret"></span>
+						</a>
+						<ul class="dropdown-menu" role="menu">
+							<li ng-repeat="city in cities">
+								<a href="" ng-click="selectCity(city)">{{city}}</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="" id="contactInfo">
+							<span class="glyphicon glyphicon-earphone"></span>&nbsp;<span class="hidden-sm">Служба поддержки: </span>+7
+							(778) 664-9388
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+	</nav>
+	<div class="container" id="header_section">
+		<div class="row header_content">
+			<div class="col-xs-12">
+				<p class="text-center" id="top_info">Поможем найти утерянное!</p>
+
+				<h1 class="text-center">Онлайн бюро находок</h1>
+
+				<p class="text-center" id="bottom_info">Единая база данных по Казахстану</p>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<md-button id="btn_lost" class="md-primary btn btn-lg col-md-6 col-sm-8 col-xs-12"
+						   ng-click="setFormTypeAndToggleOpen('lost', 'утери')">
+					Утеряно
+				</md-button>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<md-button id="btn_found" class="md-primary btn btn-lg col-md-6 col-sm-8 col-xs-12"
+						   ng-click="setFormTypeAndToggleOpen('found', 'находки')">
+					Найдено
+				</md-button>
+			</div>
+			<div class="col-md-12 col-xs-12">
+				<accordion>
+					<accordion-group is-open="isFormOpen" ng-style="{'border': accordionBorderStyle}">
+						<form class="form-horizontal" name="lostAndFoundForm"
+							  ng-submit="saveForm(lostAndFound, lostAndFoundForm)" novalidate="">
+							<br>
+
+							<h3 class="text-primary text-center">Предмет {{formTypeRu}}</h3>
+
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-8 col-xs-12">
+									<md-select placeholder="Категория {{formTypeRu}}*"
+											   id="lostAndFound.lostCategory"
+											   ng-model="lostAndFound.lostCategory">
+										<md-option ng-repeat="category in lostCategories"
+												   ng-click="selectLostCategory(category)"
+												   value="{{category}}">
+											{{category}}
+										</md-option>
+									</md-select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-8 col-xs-12">
+									<md-select placeholder="Подкатегория*"
+											   id="lostAndFound.lostSubCategory"
+											   ng-model="lostAndFound.lostSubCategory">
+										<md-option ng-repeat="subCategory in lostSubCategories"
+												   ng-click="selectLostSubCategory(subCategory)"
+												   value="{{subCategory}}">
+											{{subCategory}}
+										</md-option>
+									</md-select>
+								</div>
+							</div>
+							<br>
+
+							<h3 class="text-primary text-center">Данные {{formTypeRu}}</h3>
+
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+									<label for="name">Имя*</label>
+									<input type="text" name="lostAndFoundFormName" ng-model="lostAndFound.name"
+										   ng-required="true"/>
+
+									<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
+										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundFormName.$touched) && lostAndFoundForm.lostAndFoundFormName.$invalid">
+										<div ng-message="required">Обязательное поле</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-md-offset-2 col-md-8 col-xs-12">
-										<md-select placeholder="Подкатегория*"
-												   id="lostAndFound.lostSubCategory"
-												   ng-model="lostAndFound.lostSubCategory">
-											<md-option ng-repeat="subCategory in lostSubCategories"
-													   ng-click="selectLostSubCategory(subCategory)"
-													   value="{{subCategory}}">
-												{{subCategory}}
-											</md-option>
-										</md-select>
+								</md-input-container>
+							</div>
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+									<label for="surname">Фамилия*</label>
+									<input type="text" name="lostAndFoundSurname" ng-model="lostAndFound.surname"
+										   ng-required="true"/>
+
+									<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
+										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundSurname.$touched) && lostAndFoundForm.lostAndFoundSurname.$invalid">
+										<div ng-message="required">Обязательное поле</div>
 									</div>
-								</div>
-								<br>
-								<h3 class="text-primary text-center">Данные {{formTypeRu}}</h3>
-								<div class="form-group">
-									<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
-										<label for="name">Имя*</label>
-										<input type="text" name="lostAndFoundFormName" ng-model="lostAndFound.name" ng-required="true" />
-										<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
-											 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundFormName.$touched) && lostAndFoundForm.lostAndFoundFormName.$invalid">
-											<div ng-message="required">Обязательное поле</div>
-										</div>
-									</md-input-container>
-								</div>
-								<div class="form-group">
-									<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
-										<label for="surname">Фамилия*</label>
-										<input type="text" name="lostAndFoundSurname" ng-model="lostAndFound.surname" ng-required="true" />
-										<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
-											 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundSurname.$touched) && lostAndFoundForm.lostAndFoundSurname.$invalid">
-											<div ng-message="required">Обязательное поле</div>
-										</div>
-									</md-input-container>
-								</div>
-								<div class="form-group">
-									<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
-										<label for="date">Дата {{formTypeRu}}*</label>
-										<input type="date" locale="ru" name="lostAndFoundLostDate" ng-model="lostAndFound.lostDate" ng-required="true" />
-										<div ng-messages="lostAndFoundForm.lostAndFoundLostDate.$error"
-											 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundLostDate.$touched) && lostAndFoundForm.lostAndFoundLostDate.$invalid">
-											<div ng-message="required">Обязательное поле</div>
-										</div>
-									</md-input-container>
-								</div>
-								<div class="form-group">
-									<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
-										<label for="location">Место/Адрес {{formTypeRu}}*</label>
-										<input type="text" name="lostAndFoundLostAddress" ng-model="lostAndFound.lostAddress" ng-required="true" />
-										<div ng-messages="lostAndFoundForm.lostAndFoundLostAddress.$error"
-											 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundLostAddress.$touched) && lostAndFoundForm.lostAndFoundLostAddress.$invalid">
-											<div ng-message="required">Обязательное поле</div>
-										</div>
-									</md-input-container>
-								</div>
-								<div class="form-group">
-									<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
-										<label for="description">Описание*</label>
-										<input type="text" name="lostAndFoundDescription" ng-model="lostAndFound.description" ng-required="true" />
-										<div ng-messages="lostAndFoundForm.lostAndFoundDescription.$error"
-											 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDescription.$touched) && lostAndFoundForm.lostAndFoundDescription.$invalid">
-											<div ng-message="required">Обязательное поле</div>
-										</div>
-									</md-input-container>
-								</div>
-								<br>
-								<h3 class="text-primary text-center">Как с вами связаться</h3>
-								<div class="form-group">
-									<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
-										<label for="name">Имя*</label>
-										<input type="text" name="lostAndFoundDeclarantName" ng-model="lostAndFound.declarantName" ng-required="true" />
-										<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantName.$error"
-											 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDeclarantName.$touched) && lostAndFoundForm.lostAndFoundDeclarantName.$invalid">
-											<div ng-message="required">Обязательное поле</div>
-										</div>
-									</md-input-container>
-								</div>
-								<div class="form-group">
-									<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
-										<label for="phone">Телефон*</label>
-										<input type="text" name="lostAndFoundDeclarantPhone" ng-model="lostAndFound.declarantPhone" ng-required="true" />
-										<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantPhone.$error"
-											 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDeclarantPhone.$touched) && lostAndFoundForm.lostAndFoundDeclarantPhone.$invalid">
-											<div ng-message="required">Обязательное поле</div>
-										</div>
-									</md-input-container>
-								</div>
-								<div class="form-group">
-									<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
-										<label for="email">Имейл*</label>
-										<input type="email" name="lostAndFoundDeclarantEmail" ng-model="lostAndFound.declarantEmail" ng-required="true" />
-										<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantEmail.$error"
-											 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDeclarantEmail.$touched) && lostAndFoundForm.lostAndFoundDeclarantEmail.$invalid">
-											<div ng-message="email">Неверный имейл (электронная почта)</div>
-										</div>
-									</md-input-container>
-								</div>
-								<div class="form-group">
-									<div class="col-md-offset-2 col-md-3">
-										<md-button id="btn_submit" type="submit" class="md-raised md-primary">
-											Добавить
-										</md-button>
+								</md-input-container>
+							</div>
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+									<label for="date">Дата {{formTypeRu}}*</label>
+									<input type="date" locale="ru" name="lostAndFoundLostDate"
+										   ng-model="lostAndFound.lostDate" ng-required="true"/>
+
+									<div ng-messages="lostAndFoundForm.lostAndFoundLostDate.$error"
+										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundLostDate.$touched) && lostAndFoundForm.lostAndFoundLostDate.$invalid">
+										<div ng-message="required">Обязательное поле</div>
 									</div>
+								</md-input-container>
+							</div>
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+									<label for="location">Место/Адрес {{formTypeRu}}*</label>
+									<input type="text" name="lostAndFoundLostAddress"
+										   ng-model="lostAndFound.lostAddress" ng-required="true"/>
+
+									<div ng-messages="lostAndFoundForm.lostAndFoundLostAddress.$error"
+										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundLostAddress.$touched) && lostAndFoundForm.lostAndFoundLostAddress.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
+								</md-input-container>
+							</div>
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+									<label for="description">Описание*</label>
+									<input type="text" name="lostAndFoundDescription"
+										   ng-model="lostAndFound.description" ng-required="true"/>
+
+									<div ng-messages="lostAndFoundForm.lostAndFoundDescription.$error"
+										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDescription.$touched) && lostAndFoundForm.lostAndFoundDescription.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
+								</md-input-container>
+							</div>
+							<br>
+
+							<h3 class="text-primary text-center">Как с вами связаться</h3>
+
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+									<label for="name">Имя*</label>
+									<input type="text" name="lostAndFoundDeclarantName"
+										   ng-model="lostAndFound.declarantName" ng-required="true"/>
+
+									<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantName.$error"
+										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDeclarantName.$touched) && lostAndFoundForm.lostAndFoundDeclarantName.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
+								</md-input-container>
+							</div>
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+									<label for="phone">Телефон*</label>
+									<input type="text" name="lostAndFoundDeclarantPhone"
+										   ng-model="lostAndFound.declarantPhone" ng-required="true"/>
+
+									<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantPhone.$error"
+										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDeclarantPhone.$touched) && lostAndFoundForm.lostAndFoundDeclarantPhone.$invalid">
+										<div ng-message="required">Обязательное поле</div>
+									</div>
+								</md-input-container>
+							</div>
+							<div class="form-group">
+								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+									<label for="email">Имейл*</label>
+									<input type="email" name="lostAndFoundDeclarantEmail"
+										   ng-model="lostAndFound.declarantEmail" ng-required="true"/>
+
+									<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantEmail.$error"
+										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDeclarantEmail.$touched) && lostAndFoundForm.lostAndFoundDeclarantEmail.$invalid">
+										<div ng-message="email">Неверный имейл (электронная почта)</div>
+									</div>
+								</md-input-container>
+							</div>
+							<div class="form-group">
+								<div class="col-md-offset-2 col-md-3">
+									<md-button id="btn_submit" type="submit" class="md-raised md-primary">
+										Добавить
+									</md-button>
 								</div>
-							</form>
-						</accordion-group>
-					</accordion>
-				</div>
-				<div class="btn_arrow hidden-xs">
-					<img src="../images/arrow.png" height="45">
-				</div>
-				<div class="col-xs-12">
-					<p class="text-center btn_hint">Нажмите на кнопку чтобы заявить о пропаже или находке</p>
-				</div>
-				<div class="col-sm-12 hidden-xs">
-					<img src="../images/pics.png" class="img-responsive center-block">
-				</div>
+							</div>
+						</form>
+					</accordion-group>
+				</accordion>
+			</div>
+			<div class="btn_arrow hidden-xs">
+				<img src="../images/arrow.png" height="45">
+			</div>
+			<div class="col-xs-12">
+				<p class="text-center btn_hint">Нажмите на кнопку чтобы заявить о пропаже или находке</p>
+			</div>
+			<div class="col-sm-12 hidden-xs">
+				<img src="../images/pics.png" class="img-responsive center-block">
 			</div>
 		</div>
 	</div>
-	<div id="about_us">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-7 col-xs-12">
-					<h2><span class="blue_text">О нас.</span><br>Поможем найти утерянное.</h2>
-					<p>Ежедневно люди теряют, либо находят ценные документы или предметы. Bосстановление документов или замена пропажи - это сложный, затратный и долгий процесс. Наш проект поможет вам найти свою пропажу или вернуть найденное. Не оставайтесь в стороне, помогайте тем, кто нуждается в вашей помощи и вам воздастся втройне!</p>
-				</div>
-				<div class="col-sm-5 col-xs-12">
-					<img src="../images/about_us.png" class="img-responsive center-block">
-				</div>
+</div>
+<div id="about_us">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-7 col-xs-12">
+				<h2><span class="blue_text">О нас.</span><br>Поможем найти утерянное.</h2>
+
+				<p>Ежедневно люди теряют, либо находят ценные документы или предметы. Bосстановление документов или
+					замена пропажи - это сложный, затратный и долгий процесс. Наш проект поможет вам найти свою пропажу
+					или вернуть найденное. Не оставайтесь в стороне, помогайте тем, кто нуждается в вашей помощи и вам
+					воздастся втройне!</p>
+			</div>
+			<div class="col-sm-5 col-xs-12">
+				<img src="../images/about_us.png" class="img-responsive center-block">
 			</div>
 		</div>
 	</div>
-	<div id="how_it_works">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2 class="text-center blue_text">Как это работает?</h2>
-				</div>
+</div>
+<div id="how_it_works">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h2 class="text-center blue_text">Как это работает?</h2>
 			</div>
-			<div class="row">
-				<div class="col-xs-12">
-					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-						<!-- Indicators -->
-						<ol class="carousel-indicators">
-							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-						</ol>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					</ol>
 
-						<!-- Wrapper for slides -->
-						<div class="carousel-inner" role="listbox">
-							<div class="item active">
-								<div class="col-sm-5 col-sm-offset-1 col-xs-12">
-									<img src="../images/form.png" class="img-responsive center-block">
-								</div>
-								<div class="col-sm-4 col-xs-12">
-									<h3>1. Заявка</h3>
-									<p>Bы оставляете заявку о находке или пропаже заполнив анкету на сайте или позвонив по телефону +7 (778) 664-9388. Если вы что-то нашли, то можете оставить свой телефон в форме ниже и наш менеджер перезвонит вам для уточнения данных.</p>
-								</div>
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<div class="col-sm-5 col-sm-offset-1 col-xs-12">
+								<img src="../images/form.png" class="img-responsive center-block">
 							</div>
-							<div class="item">
-								<div class="col-sm-5 col-sm-offset-1 col-xs-12">
-									<img src="../images/call_center.png" class="img-responsive center-block">
-								</div>
-								<div class="col-sm-4 col-xs-12">
-									<h3>2. Обработка заявки</h3>
-									<p>Оператор обрабатывает заявку по базе данных и проверяет, нет ли ответной заявки по Вашему запросу. Если вашу пропажу нашли, оператор связывается с владельцем пропажи и сообщает о найденном предмете.</p>
-								</div>
-							</div>
-							<div class="item">
-								<div class="col-sm-5 col-sm-offset-1 col-xs-12">
-									<img src="../images/agreement.png" class="img-responsive center-block">
-								</div>
-								<div class="col-sm-4 col-xs-12">
-									<h3>3. Bозврат</h3>
-									<p>После предоставления оператором контактных данных нашедшего человека, вы договариваетесь с этим человеком и возвращаете свой потерянный предмет.</p>
-								</div>
+							<div class="col-sm-4 col-xs-12">
+								<h3>1. Заявка</h3>
+
+								<p>Bы оставляете заявку о находке или пропаже заполнив анкету на сайте или позвонив по
+									телефону +7 (778) 664-9388. Если вы что-то нашли, то можете оставить свой телефон в
+									форме ниже и наш менеджер перезвонит вам для уточнения данных.</p>
 							</div>
 						</div>
+						<div class="item">
+							<div class="col-sm-5 col-sm-offset-1 col-xs-12">
+								<img src="../images/call_center.png" class="img-responsive center-block">
+							</div>
+							<div class="col-sm-4 col-xs-12">
+								<h3>2. Обработка заявки</h3>
 
-						<!-- Controls -->
-						<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
+								<p>Оператор обрабатывает заявку по базе данных и проверяет, нет ли ответной заявки по
+									Вашему запросу. Если вашу пропажу нашли, оператор связывается с владельцем пропажи и
+									сообщает о найденном предмете.</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="col-sm-5 col-sm-offset-1 col-xs-12">
+								<img src="../images/agreement.png" class="img-responsive center-block">
+							</div>
+							<div class="col-sm-4 col-xs-12">
+								<h3>3. Bозврат</h3>
+
+								<p>После предоставления оператором контактных данных нашедшего человека, вы
+									договариваетесь с этим человеком и возвращаете свой потерянный предмет.</p>
+							</div>
+						</div>
 					</div>
+
+					<!-- Controls -->
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="contact_us">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-sm-offset-2 col-xs-12">
-					<h2 class="text-center blue_text">Bы что-то нашли или потеряли?</h2>
-					<p>Для подачи заявки по телефону оставьте свои контактные данные и наш специалист свяжется с вами в ближайшее время.</p>
-				</div>
+</div>
+<div id="contact_us">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 col-xs-12">
+				<h2 class="text-center blue_text">Bы что-то нашли или потеряли?</h2>
+
+				<p>Для подачи заявки по телефону оставьте свои контактные данные и наш специалист свяжется с вами в
+					ближайшее время.</p>
 			</div>
-			<div class="row">
-				<div class="col-sm-4 col-sm-offset-4 col-xs-12">
-					<form class="form-horizontal">
-						<div class="form-group">
-							<md-input-container>
-								<label for="name">Имя*</label>
-								<input type="text" name="lostAndFoundFormName" ng-model="lostAndFound.name" ng-required="true" />
-								<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
-									 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundFormName.$touched) && lostAndFoundForm.lostAndFoundFormName.$invalid">
-									<div ng-message="required">Обязательное поле</div>
-								</div>
-							</md-input-container>
-						</div>
-						<div class="form-group">
-							<md-input-container>
-								<label for="surname">Телефон*</label>
-								<input type="text" name="lostAndFoundSurname" ng-model="lostAndFound.surname" ng-required="true" />
-								<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
-									 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundSurname.$touched) && lostAndFoundForm.lostAndFoundSurname.$invalid">
-									<div ng-message="required">Обязательное поле</div>
-								</div>
-							</md-input-container>
-						</div>
-						<div class="form-group">
-							<div>
-								<md-button id="btn_contact_us" class="md-primary btn btn-lg col-xs-12">
-									Добавить
-								</md-button>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4 col-xs-12">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<md-input-container>
+							<label for="name">Имя*</label>
+							<input type="text" name="lostAndFoundFormName" ng-model="lostAndFound.name"
+								   ng-required="true"/>
+
+							<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
+								 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundFormName.$touched) && lostAndFoundForm.lostAndFoundFormName.$invalid">
+								<div ng-message="required">Обязательное поле</div>
 							</div>
+						</md-input-container>
+					</div>
+					<div class="form-group">
+						<md-input-container>
+							<label for="surname">Телефон*</label>
+							<input type="text" name="lostAndFoundSurname" ng-model="lostAndFound.surname"
+								   ng-required="true"/>
+
+							<div ng-messages="lostAndFoundForm.lostAndFoundSurname.$error"
+								 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundSurname.$touched) && lostAndFoundForm.lostAndFoundSurname.$invalid">
+								<div ng-message="required">Обязательное поле</div>
+							</div>
+						</md-input-container>
+					</div>
+					<div class="form-group">
+						<div>
+							<md-button id="btn_contact_us" class="md-primary btn btn-lg col-xs-12">
+								Добавить
+							</md-button>
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<p>© 2015 Онлайн-бюро находок. <a href="http://buronahodok.kz/">buronahodok.kz</a>.</p>
-				</div>
+<div id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<p>© 2015 Онлайн-бюро находок. <a href="http://buronahodok.kz/">buronahodok.kz</a>.</p>
 			</div>
 		</div>
 	</div>
+</div>
 
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-	<script>
-		!function (A, n, g, u, l, a, r) {
-			A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-				(A[l].q = A[l].q || []).push(arguments)
-			}, A[l].l = +new Date, a = n.createElement(g),
-				r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-		}(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+	!function (A, n, g, u, l, a, r) {
+		A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+			(A[l].q = A[l].q || []).push(arguments)
+		}, A[l].l = +new Date, a = n.createElement(g),
+			r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+	}(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-		ga('create', 'UA-XXXXX-X');
-		ga('send', 'pageview');
-	</script>
+	ga('create', 'UA-XXXXX-X');
+	ga('send', 'pageview');
+</script>
 </body>
 </html>
