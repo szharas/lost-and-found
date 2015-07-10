@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lostAndFoundApp')
-	.controller('MainCtrl', function ($scope, toastr) {
+	.controller('MainCtrl', function ($scope, $http, toastr) {
 		// Initialize variables
 		$scope.cities = ['Астана', 'Алматы'];
 		$scope.lostCategories = ['Документ', 'Портмоне/Сумка', 'Телефон/Планшет', 'Гос. номер', 'Печати/Штампы', 'Другое'];
@@ -65,7 +65,16 @@ angular.module('lostAndFoundApp')
 			if (!lostAndFoundForm.$valid) {
 				toastr.error('Ошибка  в заявке!');
 			} else {
-				toastr.success('Заявка сохранена!');
+				$http.post('/lostandfounds/save', lostAndFound).
+					success(function(data, status, headers, config) {
+						console.log('Server response: ' + JSON.stringify(data));
+						toastr.success('Заявка сохранена!');
+					}).
+					error(function(data, status, headers, config) {
+						console.log('Server response: ' + JSON.stringify(data));
+						toastr.error('Ошибка при сохранении!');
+					});
+
 			}
 		};
 	});
