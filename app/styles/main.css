@@ -319,6 +319,10 @@ body{
 	font-family: 'Roboto-Medium';
 	border-radius: 10px;
 }
+
+.panel-default {
+	border-color: #009688;
+}
 /* End: added by Baurzhan */
 
 

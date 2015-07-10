@@ -65,13 +65,13 @@ angular.module('lostAndFoundApp')
 			if (!lostAndFoundForm.$valid) {
 				toastr.error('Ошибка  в заявке!');
 			} else {
-				$http.post('/lostandfounds/save', lostAndFound).
+				$http.post('/lost-and-found/lostandfounds/save', lostAndFound).
 					success(function(data, status, headers, config) {
-						console.log('Server response: ' + JSON.stringify(data));
+						console.log('Server response success: ' + JSON.stringify(data));
 						toastr.success('Заявка сохранена!');
 					}).
 					error(function(data, status, headers, config) {
-						console.log('Server response: ' + JSON.stringify(data));
+						console.log('Server response error: ' + JSON.stringify(data));
 						toastr.error('Ошибка при сохранении!');
 					});
 
