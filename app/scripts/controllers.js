@@ -10,7 +10,7 @@ angular.module('lostAndFoundApp')
 		$scope.lostAndFound.city = 'Астана';
 		$scope.lostAndFound.lostCategory = 'Документ';
 		$scope.lostAndFound.lostSubCategory = 'Удостоверение личности';
-		$scope.formType = 'lost';
+		$scope.lostAndFound.formType = 'lost';
 		$scope.formTypeRu = 'утери';
 		$scope.isFormOpen = false;
 		$scope.accordionBorderStyle = 'none';
@@ -37,13 +37,13 @@ angular.module('lostAndFoundApp')
 				$scope.isFormOpen = true;
 				$scope.accordionBorderStyle = '1px solid;';
 			} else {
-				if ($scope.formType === formType) {
+				if ($scope.lostAndFound.formType === formType) {
 					$scope.isFormOpen = false;
 					$scope.accordionBorderStyle = 'none';
 				}
 			}
 
-			$scope.formType = formType;
+			$scope.lostAndFound.formType = formType;
 			$scope.formTypeRu = formTypeRu;
 
 			// Reset form validation
@@ -51,11 +51,11 @@ angular.module('lostAndFoundApp')
 		};
 
 		$scope.isLostForm = function () {
-			return ($scope.formType === 'lost');
+			return ($scope.lostAndFound.formType === 'lost');
 		};
 
 		$scope.isFoundForm = function () {
-			return ($scope.formType === 'found');
+			return ($scope.lostAndFound.formType === 'found');
 		};
 
 		$scope.saveForm = function (lostAndFound, lostAndFoundForm) {
@@ -65,7 +65,7 @@ angular.module('lostAndFoundApp')
 			if (!lostAndFoundForm.$valid) {
 				toastr.error('Ошибка  в заявке!');
 			} else {
-				$http.post('/lost-and-found/lostandfounds/save', lostAndFound).
+				$http.post('/buronahodok/lostandfounds/save', lostAndFound).
 					success(function(data, status, headers, config) {
 						console.log('Server response success: ' + JSON.stringify(data));
 						toastr.success('Заявка сохранена!');
