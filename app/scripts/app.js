@@ -20,7 +20,8 @@ angular
 		'ui.bootstrap',
 		'ui.bootstrap.showErrors',
 		'ngMaterial',
-		'toastr'
+		'toastr',
+		'angular-loading-bar'
 	])
 	.config(function ($routeProvider) {
 		$routeProvider
@@ -35,4 +36,7 @@ angular
 			.otherwise({
 				redirectTo: '/'
 			});
-	});
+	})
+	.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+		cfpLoadingBarProvider.latencyThreshold = 0;
+	}]);
