@@ -87,7 +87,7 @@
 					</li>
 					<li>
 						<a href="" id="contactInfo">
-							<span class="glyphicon glyphicon-earphone"></span>&nbsp;<span class="hidden-sm">Служба поддержки: </span>+7
+							<span class="glyphicon glyphicon-earphone"></span>&nbsp;<span class="hidden-sm hidden-xs">Служба поддержки: </span>+7
 							(778) 664-9388
 						</a>
 					</li>
@@ -105,13 +105,13 @@
 
 				<p class="text-center" id="bottom_info">Единая база данных по Казахстану</p>
 			</div>
-			<div class="col-sm-6 col-xs-12">
+			<div class="col-sm-6 col-xs-6">
 				<md-button id="btn_lost" class="md-primary btn btn-lg col-md-6 col-sm-8 col-xs-12"
 						   ng-click="setFormTypeAndToggleOpen('lost', 'утери')">
 					Утеряно
 				</md-button>
 			</div>
-			<div class="col-sm-6 col-xs-12">
+			<div class="col-sm-6 col-xs-6">
 				<md-button id="btn_found" class="md-primary btn btn-lg col-md-6 col-sm-8 col-xs-12"
 						   ng-click="setFormTypeAndToggleOpen('found', 'находки')">
 					Найдено
@@ -290,7 +290,7 @@
 					или вернуть найденное. Не оставайтесь в стороне, помогайте тем, кто нуждается в вашей помощи и вам
 					воздастся втройне!</p>
 			</div>
-			<div class="col-sm-5 col-xs-12">
+			<div class="col-sm-5 hidden-xs">
 				<img src="../images/about_us.png" class="img-responsive center-block">
 			</div>
 		</div>
@@ -380,7 +380,7 @@
 			<div class="col-sm-4 col-sm-offset-4 col-xs-12">
 				<form class="form-horizontal">
 					<div class="form-group">
-						<md-input-container>
+						<md-input-container class="col-xs-12">
 							<label for="name">Имя*</label>
 							<input type="text" name="lostAndFoundFormName" ng-model="lostAndFound.name"
 								   ng-required="true"/>
@@ -389,10 +389,10 @@
 								 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundFormName.$touched) && lostAndFoundForm.lostAndFoundFormName.$invalid">
 								<div ng-message="required">Обязательное поле</div>
 							</div>
-						</md-input-container>
+						</md-input-container class="col-xs-12">
 					</div>
 					<div class="form-group">
-						<md-input-container>
+						<md-input-container class="col-xs-12">
 							<label for="surname">Телефон*</label>
 							<input type="text" name="lostAndFoundSurname" ng-model="lostAndFound.surname"
 								   ng-required="true"/>
@@ -404,7 +404,7 @@
 						</md-input-container>
 					</div>
 					<div class="form-group">
-						<div>
+						<div class="col-xs-12">
 							<md-button id="btn_contact_us" class="md-primary btn btn-lg col-xs-12">
 								Добавить
 							</md-button>

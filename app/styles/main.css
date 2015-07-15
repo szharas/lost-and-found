@@ -47,13 +47,12 @@ body{
 .navbar-default {
 	background-color: transparent;
 	border-color: transparent;
-	padding-top: 2em;
 	color: #fff!important;
 }
 
 .navbar-brand{
 	font-family: 'Fregat';
-	font-size: 3em;
+	font-size: 2em;
 	font-weight: bold;
 	color: #fff!important;
 }
@@ -102,7 +101,6 @@ body{
 }
 
 #header_section {
-	padding-top: 2em;
 	color: #fff;
 }
 
@@ -111,19 +109,19 @@ body{
 }
 
 #top_info{
-	font-size: 1.8em;
+	font-size: 1.5em;
 }
 
 #header_section h1{
 	text-transform: uppercase;
 	font-family: 'Roboto';
 	font-weight: bold;
-	font-size: 5em;
+	font-size: 2.5em;
 	margin-bottom: 20px;
 }
 
 #bottom_info{
-	font-size: 1.4em;
+	font-size: 1.1em;
 	color: #333333;
 }
 
@@ -140,42 +138,18 @@ body{
 	position: absolute;
 }
 
-@media (min-width: 768px){
-	.btn_arrow{
-		left: 18%;
-		top: 40.5%%;
-	}
-}
-
-@media (min-width: 992px) {
-	.btn_arrow{
-		left: 27%;
-		top: 40.5%%;
-	}
-}
-
-@media (min-width: 1200px) {
-	.btn_arrow{
-		left: 29%;
-		top: 40.5%%;
-	}
-}
-
 #btn_lost, #btn_found{
-	padding: 18px 75px;
-	font-size: 15px;
+	font-size: 12px;
+	padding: 4px 0;
 	color: #fff;
 	font-family: 'Roboto-Medium';
 	border: 2px solid #fafafa;
-	border-radius: 10px;
+	border-radius: 6px;
 }
-@media (min-width: 768px) {
-	#btn_lost{
-		float: right;
-	}
-	#btn_found{
-		float: left;
-	}
+
+.md-button{
+	padding: 0;
+	margin: 0;
 }
 
 #btn_lost{
@@ -203,7 +177,6 @@ body{
 #about_us{
 	background-color: #fff;
 	color: #333;
-	padding-top: 50px;
 	padding-bottom: 50px;
 }
 
@@ -214,7 +187,6 @@ body{
 #about_us h2{
 	color: #333;
 	padding-top: 25px;
-	text-align: right;
 }
 
 .blue_text{
@@ -222,7 +194,6 @@ body{
 }
 
 #about_us p{
-	text-align: right;
 	color: #555;
 	font-size: 1.2em;
 }
@@ -255,12 +226,6 @@ body{
 
 .carousel-control {
 	color: #777;
-}
-
-@media (min-width: 768px){
-	.carousel-indicators {
-		bottom: -30px!important;
-	}
 }
 
 .carousel-indicators li {
@@ -309,6 +274,81 @@ body{
 	border-radius: 10px;
 }
 
+/* Media queries */
+
+@media (max-width: 768px){
+	.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+		top: 150px;
+	}
+	.carousel-indicators {
+		bottom: -40px;
+	}
+	#contact_us {
+		padding-top: 0px;
+	}
+}
+
+@media (min-width: 768px){ 
+	.btn_arrow{
+		left: 18%;
+		top: 40.5%%;
+	}
+	#btn_lost{
+		float: right;
+	}
+	#btn_found{
+		float: left;
+	}
+	.carousel-indicators {
+		bottom: -30px!important;
+	}
+	.navbar-brand {
+		font-size: 3em;;
+	}
+	#header_section h1 {
+		font-size: 5em;
+	}
+	#top_info{
+		font-size: 1.8em;
+	}
+	#header_section {
+		padding-top: 2.5em;
+	}
+	.navbar-default {
+		padding-top: 2em;
+	}
+	#bottom_info{
+		font-size: 1.1em;
+	}
+	#btn_lost, #btn_found{
+		padding: 14px 75px;
+		font-size: 15px;
+		border-radius: 10px;
+	}
+	#about_us{
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	#about_us h2, #about_us p{
+		text-align: right;
+	}
+}
+
+@media (min-width: 992px) {
+	.btn_arrow{
+		left: 27%;
+		top: 40.5%%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.btn_arrow{
+		left: 29%;
+		top: 40.5%%;
+	}
+}
+
+/* End of media queries */
 
 /* Start: added by Baurzhan */
 #btn_submit {
