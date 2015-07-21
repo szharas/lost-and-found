@@ -291,7 +291,7 @@ body{
 @media (min-width: 768px){ 
 	.btn_arrow{
 		left: 18%;
-		top: 40.5%%;
+		top: 52%;
 	}
 	#btn_lost{
 		float: right;
@@ -321,7 +321,7 @@ body{
 		font-size: 1.1em;
 	}
 	#btn_lost, #btn_found{
-		padding: 14px 75px;
+		padding: 10px 75px;
 		font-size: 15px;
 		border-radius: 10px;
 	}
@@ -336,8 +336,8 @@ body{
 
 @media (min-width: 992px) {
 	.btn_arrow{
-		left: 27%;
-		top: 40.5%%;
+		left: 25%;
+		top: 40.5%;
 	}
 }
 
