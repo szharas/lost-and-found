@@ -184,7 +184,7 @@
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="date">Дата {{formTypeRu}}*</label>
 									<input type="date" locale="ru" name="lostAndFoundLostDate"
-										   ng-model="lostAndFound.lostDate" ng-required="true"/>
+										   ng-model="lostAndFound.lostDate" ng-required="false"/>
 
 									<div ng-messages="lostAndFoundForm.lostAndFoundLostDate.$error"
 										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundLostDate.$touched) && lostAndFoundForm.lostAndFoundLostDate.$invalid">
@@ -196,7 +196,7 @@
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="location">Место/Адрес {{formTypeRu}}*</label>
 									<input type="text" name="lostAndFoundLostAddress"
-										   ng-model="lostAndFound.lostAddress" ng-required="true"/>
+										   ng-model="lostAndFound.lostAddress" ng-required="false"/>
 
 									<div ng-messages="lostAndFoundForm.lostAndFoundLostAddress.$error"
 										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundLostAddress.$touched) && lostAndFoundForm.lostAndFoundLostAddress.$invalid">
@@ -208,7 +208,7 @@
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="description">Описание*</label>
 									<input type="text" name="lostAndFoundDescription"
-										   ng-model="lostAndFound.description" ng-required="true"/>
+										   ng-model="lostAndFound.description" ng-required="false"/>
 
 									<div ng-messages="lostAndFoundForm.lostAndFoundDescription.$error"
 										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDescription.$touched) && lostAndFoundForm.lostAndFoundDescription.$invalid">
@@ -248,7 +248,7 @@
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="email">Имейл*</label>
 									<input type="email" name="lostAndFoundDeclarantEmail"
-										   ng-model="lostAndFound.declarantEmail" ng-required="true"/>
+										   ng-model="lostAndFound.declarantEmail" ng-required="false"/>
 
 									<div ng-messages="lostAndFoundForm.lostAndFoundDeclarantEmail.$error"
 										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAndFoundDeclarantEmail.$touched) && lostAndFoundForm.lostAndFoundDeclarantEmail.$invalid">
