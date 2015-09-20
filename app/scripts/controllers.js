@@ -25,7 +25,7 @@ angular.module('lostAndFoundApp')
 		];
 
 		$scope.deviceBrands = $http.get('data/deviceBrands.json').success(function(response) {
-			console.log('/data/deviceBrands.json: ' + JSON.stringify(response.data));
+			console.log('/data/deviceBrands.json: ' + JSON.stringify(response));
 
 			return response.data;
 		});
@@ -82,6 +82,18 @@ angular.module('lostAndFoundApp')
 
 		$scope.isFoundForm = function () {
 			return ($scope.lostAndFound.formType === 'found');
+		};
+
+		$scope.getDocumentNumberLabel = function () {
+			var result = 'ИИН';
+
+			if (!$scope.lostAndFound.documentSubCategory || $scope.lostAndFound.documentSubCategory !== 'Удостоверение личности') {
+				result = 'Номер документа';
+			} else if ($scope.lostAndFound.documentSubCategory === 'Удостоверение личности') {
+				result = 'ИИН';
+			}
+
+			return result;
 		};
 
 		$scope.saveForm = function (lostAndFound, lostAndFoundForm, event) {
