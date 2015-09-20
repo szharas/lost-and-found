@@ -288,7 +288,7 @@ body{
 	}
 }
 
-@media (min-width: 768px){ 
+@media (min-width: 768px){
 	.btn_arrow{
 		left: 18%;
 		top: 52%;
@@ -362,6 +362,10 @@ body{
 
 .panel-default {
 	border-color: #009688;
+}
+
+#isWalletBagSelected {
+	padding-top: 19px;
 }
 /* End: added by Baurzhan */
 
