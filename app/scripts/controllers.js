@@ -1,46 +1,32 @@
 'use strict';
 
 angular.module('lostAndFoundApp')
-	.controller('MainCtrl', function ($scope, $http, toastr, $mdDialog) {
+	.controller('MainCtrl', function ($scope, MainService, FormService, $http, toastr, $mdDialog) {
 		// Declare variables
-		$scope.cities = [
-			'Астана', 'Алматы', 'Актау', 'Актобе', 'Атырау', 'Джезказган', 'Караганда',
-			'Костанай', 'Кокшетау', 'Кызылорда', 'Павлодар', 'Петропавловск', 'Семипалатинск',
-			'Талдыкорган', 'Тараз', 'Туркестан', 'Уральск', 'Усть-Каменогорск', 'Шымкент', 'Экибастуз'
-		];
-		$scope.lostCategories = [
-			'Документ',
-			'Телефон/Планшет',
-			'Гос. номер',
-			'Другое'
-		];
-		$scope.documentSubCategories = ['Удостоверение личности',
-					'Паспорт',
-					'Водительское удостоверение',
-					'Тех. паспорт (Свидетельство о регистрации транспортного средства)',
-					'Свидетельство о рождении',
-					'Диплом',
-					'Военный билет',
-					'Другой документ'
-		];
-
-		$scope.deviceBrands = $http.get('data/deviceBrands.json').success(function(response) {
-			console.log('/data/deviceBrands.json: ' + JSON.stringify(response));
-
-			return response.data;
-		});
+		$scope.cities = MainService.getCities();
+		$scope.lostCategories = MainService.getLostCategories();
+		$scope.documentSubCategories = MainService.getDocumentSubCategories();
+		$scope.deviceBrands = MainService.getDeviceBrands();
 
 		// Initialize variables
 		$scope.lostAndFound = {};
 		$scope.city = 'Астана';
 		$scope.lostAndFound.formType = 'lost';
 		$scope.lostAndFound.city ='Астана';
+		$scope.lostAndFound.isWalletBagSelected = false;
 		$scope.formTypeRu = 'утери';
 		$scope.isFormOpen = true;
 		$scope.accordionBorderStyle = 'none';
 		$scope.isFormSumbitted = false;
 
 		// Functions
+		$scope.resetLostAndFound = function (lostAndFound) {
+			var lostAndFoundTemp = {};
+			lostAndFoundTemp.city = lostAndFound.city;
+			lostAndFoundTemp.formType = lostAndFound.formType;
+			return lostAndFoundTemp;
+		};
+
 		$scope.selectCity = function (city) {
 			console.log('City selected:' + city);
 			$scope.city = city;
@@ -49,6 +35,8 @@ angular.module('lostAndFoundApp')
 
 		$scope.selectLostCategory = function (category) {
 			console.log('Category selected: ' + category);
+
+			$scope.lostAndFound = $scope.resetLostAndFound($scope.lostAndFound);
 			$scope.lostAndFound.lostCategory = category;
 		};
 
@@ -85,13 +73,7 @@ angular.module('lostAndFoundApp')
 		};
 
 		$scope.getDocumentNumberLabel = function () {
-			var result = 'ИИН';
-
-			if (!$scope.lostAndFound.documentSubCategory || $scope.lostAndFound.documentSubCategory !== 'Удостоверение личности') {
-				result = 'Номер документа';
-			} else if ($scope.lostAndFound.documentSubCategory === 'Удостоверение личности') {
-				result = 'ИИН';
-			}
+			var result = FormService.getDocumentNumberLabel($scope.lostAndFound.documentSubCategory);
 
 			return result;
 		};
@@ -113,14 +95,12 @@ angular.module('lostAndFoundApp')
 				toastr.error('Ошибка  в заявке!');
 			} else {
 				$http.post('/buronahodok/lostandfounds/save', lostAndFound).
-					success(function (data, status, headers, config) {
-
+					success(function (data) {
 						console.log('Server response success: ' + JSON.stringify(data));
-
 
 						toastr.success('Заявка сохранена!');
 					}).
-					error(function (data, status, headers, config) {
+					error(function (data) {
 						console.log('Server response error: ' + JSON.stringify(data));
 						toastr.error('Ошибка при сохранении!');
 					});
