@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lostAndFoundApp')
-	.controller('MainCtrl', function ($scope, MainService, FormService, $http, toastr, $mdDialog) {
+	.controller('MainCtrl', function ($scope, MainService, FormService, $location, $http, toastr, $mdDialog) {
 		// Declare variables
 		$scope.cities = MainService.getCities();
 		$scope.lostCategories = MainService.getLostCategories();
@@ -37,7 +37,16 @@ angular.module('lostAndFoundApp')
 			console.log('Category selected: ' + category);
 
 			$scope.lostAndFound = $scope.resetLostAndFound($scope.lostAndFound);
+
 			$scope.lostAndFound.lostCategory = category;
+
+			if ($scope.lostAndFound.lostCategory === 'Документ') {
+				$location.path('/documentForm');
+			} else if ($scope.lostAndFound.lostCategory === 'Телефон/Планшет') {
+				$location.path('/deviceForm');
+			} else if ($scope.lostAndFound.lostCategory === 'Гос. номер') {
+				$location.path('/licenseForm');
+			}
 		};
 
 		$scope.selectDocumentSubCategory = function (documentSubCategory) {

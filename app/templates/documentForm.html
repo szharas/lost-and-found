@@ -1,0 +1,46 @@
+<!-- Start: lostCategory == 'Документ' -->
+<!--<div ng-show="lostAndFound.lostCategory === 'Документ'">-->
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-8 col-xs-12">
+			<md-select placeholder="Подкатегория {{formTypeRu}}*"
+					   id="lostAndFound.documentSubCategory"
+					   ng-model="lostAndFound.documentSubCategory">
+				<md-option ng-repeat="documentSubCategory in documentSubCategories"
+						   ng-click="selectDocumentSubCategory(documentSubCategory)"
+						   value="{{documentSubCategory}}">
+					{{documentSubCategory}}
+				</md-option>
+			</md-select>
+		</div>
+	</div>
+	<div class="form-group">
+		<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+			<label for="name">Имя*</label>
+			<input type="text" name="documentName" ng-model="lostAndFound.documentName"
+				   ng-required="true"/>
+			<div ng-messages="lostAndFoundForm.documentName.$error"
+				 ng-show="(isFormSumbitted || lostAndFoundForm.documentName.$touched) && lostAndFoundForm.documentName.$invalid">
+				<div ng-message="required">Обязательное поле</div>
+			</div>
+		</md-input-container>
+	</div>
+	<div class="form-group">
+		<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+			<label for="surname">Фамилия*</label>
+			<input type="text" name="documentSurname" ng-model="lostAndFound.documentSurname"
+				   ng-required="true"/>
+			<div ng-messages="lostAndFoundForm.documentSurname.$error"
+				 ng-show="(isFormSumbitted || lostAndFoundForm.documentSurname.$touched) && lostAndFoundForm.documentSurname.$invalid">
+				<div ng-message="required">Обязательное поле</div>
+			</div>
+		</md-input-container>
+	</div>
+	<div class="form-group">
+		<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
+			<label>{{getDocumentNumberLabel()}}</label>
+			<input type="text" name="documentNumber" ng-model="lostAndFound.documentNumber"
+				   ng-required="false"/>
+		</md-input-container>
+	</div>
+<!--</div>-->
+<!-- End: lostCategory == 'Документ' -->

@@ -24,17 +24,21 @@ angular
 		'angular-loading-bar'
 	])
 	.config(function ($routeProvider) {
-		$routeProvider
-			// .when('/', {
-			// 	templateUrl: 'views/main.html',
-			// 	controller: 'MainCtrl'
-			// })
-			// .when('/about', {
-			//  templateUrl: 'views/about.html',
-			//  controller: 'AboutCtrl'
-			// })
-			.otherwise({
-				redirectTo: '/'
+		$routeProvider.
+			when('/documentForm', {
+				templateUrl: 'templates/documentForm.html',
+				controller: 'MainCtrl'
+			}).
+			when('/deviceForm', {
+				templateUrl: 'templates/deviceForm.html',
+				controller: 'MainCtrl'
+			}).
+			when('/licenseForm', {
+				templateUrl: 'templates/licenseForm.html',
+				controller: 'MainCtrl'
+			}).
+			otherwise({
+				redirectTo: '/documentForm'
 			});
 	})
 	.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
