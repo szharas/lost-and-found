@@ -25,21 +25,21 @@ angular
     ])
     .config(function ($stateProvider, $urlRouterProvider) {
         // For any unmatched url, redirect to /
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise('/');
 
         // Now set up the states
         $stateProvider
             .state('documentForm', {
-                url: "/",
-                templateUrl: "templates/documentForm.html",
+                url: '/',
+                templateUrl: 'templates/documentForm.html',
                 controller: 'MainCtrl'
             })
             .state('deviceForm', {
-                templateUrl: "templates/deviceForm.html",
+                templateUrl: 'templates/deviceForm.html',
                 controller: 'MainCtrl'
             })
             .state('licenseForm', {
-                templateUrl: "templates/licenseForm.html",
+                templateUrl: 'templates/licenseForm.html',
                 controller: 'MainCtrl'
             });
     })

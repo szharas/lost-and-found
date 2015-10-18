@@ -9,6 +9,7 @@ angular.module('lostAndFoundApp')
 		$scope.deviceBrands = MainService.getDeviceBrands();
 
 		// Initialize variables
+		$scope.forms = {}
 		$scope.lostAndFound = {};
 		$scope.city = 'Астана';
 		$scope.lostAndFound.formType = 'lost';
@@ -24,6 +25,13 @@ angular.module('lostAndFoundApp')
 			var lostAndFoundTemp = {};
 			lostAndFoundTemp.city = lostAndFound.city;
 			lostAndFoundTemp.formType = lostAndFound.formType;
+
+			console.dir($scope.forms.lostAndFoundForm);
+			$scope.forms.lostAndFoundForm.$setDirty(false);
+			$scope.forms.lostAndFoundForm.$setPristine(true);
+			$scope.forms.lostAndFoundForm.$setUntouched(true);
+			$scope.forms.lostAndFoundForm.$setSubmitted(false);
+
 			return lostAndFoundTemp;
 		};
 
@@ -39,7 +47,6 @@ angular.module('lostAndFoundApp')
 			$scope.lostAndFound = $scope.resetLostAndFound($scope.lostAndFound);
 
 			$scope.lostAndFound.lostCategory = category;
-
 			if ($scope.lostAndFound.lostCategory === 'Документ') {
 				$state.go('documentForm');
 			} else if ($scope.lostAndFound.lostCategory === 'Телефон/Планшет') {

@@ -119,7 +119,7 @@
 			<div class="col-md-12 col-xs-12">
 				<accordion>
 					<accordion-group is-open="isFormOpen" ng-style="{'border': accordionBorderStyle}">
-						<form class="form-horizontal" name="lostAndFoundForm"
+						<form class="form-horizontal" name="forms.lostAndFoundForm"
 							  ng-submit="saveForm(lostAndFound, lostAndFoundForm, $event)" novalidate="">
 							<br>
 							<h3 class="text-primary text-center">Предмет {{formTypeRu}}</h3>
@@ -159,7 +159,7 @@
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="date">Дата {{formTypeRu}}*</label>
 									<input type="date" locale="ru" name="lostDate"
-										   ng-model="lostAndFound.lostDate" ng-required="false"/>
+										   ng-model="lostAndFound.lostDate" ng-required="true"/>
 
 									<div ng-messages="lostAndFoundForm.lostDate.$error"
 										 ng-show="(isFormSumbitted || lostAndFoundForm.lostDate.$touched) && lostAndFoundForm.lostDate.$invalid">
@@ -171,7 +171,7 @@
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="location">Место/Адрес {{formTypeRu}}*</label>
 									<input type="text" name="lostAddress"
-										   ng-model="lostAndFound.lostAddress" ng-required="false"/>
+										   ng-model="lostAndFound.lostAddress" ng-required="true"/>
 
 									<div ng-messages="lostAndFoundForm.lostAddress.$error"
 										 ng-show="(isFormSumbitted || lostAndFoundForm.lostAddress.$touched) && lostAndFoundForm.lostAddress.$invalid">
@@ -183,7 +183,7 @@
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 									<label for="description">Описание*</label>
 									<input type="text" name="description"
-										   ng-model="lostAndFound.description" ng-required="false"/>
+										   ng-model="lostAndFound.description" ng-required="true"/>
 
 									<div ng-messages="lostAndFoundForm.description.$error"
 										 ng-show="(isFormSumbitted || lostAndFoundForm.description.$touched) && lostAndFoundForm.description.$invalid">
