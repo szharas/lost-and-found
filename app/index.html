@@ -31,7 +31,6 @@
 	<script src="bower_components/angular-animate/angular-animate.js"></script>
 	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
-	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 	<script src="bower_components/angular-touch/angular-touch.js"></script>
 	<script src="bower_components/angular-bootstrap-show-errors/src/showErrors.js"></script>
@@ -41,6 +40,7 @@
 	<script src="bower_components/angular-mocks/angular-mocks.js"></script>
 	<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 	<script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<!-- endbower -->
 	<!-- endbuild -->
 
@@ -153,7 +153,7 @@
 
 							<h3 class="text-primary text-center">Данные {{formTypeRu}}</h3>
 
-							<div ng-view></div>
+							<div ui-view></div>
 
 							<div class="form-group">
 								<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
