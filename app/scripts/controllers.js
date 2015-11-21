@@ -9,51 +9,74 @@ angular.module('lostAndFoundApp')
 		$scope.deviceBrands = MainService.getDeviceBrands();
 
 		// Initialize variables
-		$scope.forms = {}
+		$scope.forms = {};
 		$scope.lostAndFound = {};
-		$scope.city = 'Астана';
+		$scope.lostAndFound.city = 'Астана';
 		$scope.lostAndFound.formType = 'lost';
-		$scope.lostAndFound.city ='Астана';
-		$scope.lostAndFound.isWalletBagSelected = false;
 		$scope.formTypeRu = 'утери';
+		$scope.lostAndFound.isWalletBagSelected = false;
 		$scope.isFormOpen = true;
 		$scope.accordionBorderStyle = 'none';
 		$scope.isFormSumbitted = false;
 
-		// Functions
-		$scope.resetLostAndFound = function (lostAndFound) {
-			var lostAndFoundTemp = {};
-			lostAndFoundTemp.city = lostAndFound.city;
-			lostAndFoundTemp.formType = lostAndFound.formType;
 
-			console.dir($scope.forms.lostAndFoundForm);
-			$scope.forms.lostAndFoundForm.$setDirty(false);
-			$scope.forms.lostAndFoundForm.$setPristine(true);
-			$scope.forms.lostAndFoundForm.$setUntouched(true);
-			$scope.forms.lostAndFoundForm.$setSubmitted(false);
+		var self = this;
+		// list of `state` value/display objects
+		self.states        = $scope.deviceBrands;
+		self.selectedItem  = null;
+		self.searchText    = null;
+		// ******************************
+		// Internal methods
+		// ******************************
+		/**
+		 * Search for states... use $timeout to simulate
+		 * remote dataservice call.
+		 */
+		$scope.querySearch = function (query) {
+			console.log('search query is called');
+			var results = self.states.then(function(response) {
+				console.dir(response.data);
+				var results = query ? response.data.filter( createFilterFor(query) ) : [];
+				return results;
+			});
 
-			return lostAndFoundTemp;
+			return results;
+		};
+		/**
+		 * Create filter function for a query string
+		 */
+		function createFilterFor(query) {
+			var lowercaseQuery = angular.lowercase(query);
+			return function filterFn(state) {
+				return (state.value.indexOf(lowercaseQuery) === 0);
+			};
 		};
 
+
+
+
+
+
+
+		// Functions
 		$scope.selectCity = function (city) {
 			console.log('City selected:' + city);
-			$scope.city = city;
 			$scope.lostAndFound.city = city;
 		};
 
 		$scope.selectLostCategory = function (category) {
 			console.log('Category selected: ' + category);
 
-			$scope.lostAndFound = $scope.resetLostAndFound($scope.lostAndFound);
-
 			$scope.lostAndFound.lostCategory = category;
-			if ($scope.lostAndFound.lostCategory === 'Документ') {
+			// Reset form validation
+			console.dir($scope.forms.lostAndFoundForm);
+			/*if ($scope.lostAndFound.lostCategory === 'Документ') {
 				$state.go('documentForm');
 			} else if ($scope.lostAndFound.lostCategory === 'Телефон/Планшет') {
 				$state.go('deviceForm');
 			} else if ($scope.lostAndFound.lostCategory === 'Гос. номер') {
 				$state.go('licenseForm');
-			}
+			}*/
 		};
 
 		$scope.selectDocumentSubCategory = function (documentSubCategory) {
@@ -94,9 +117,12 @@ angular.module('lostAndFoundApp')
 			return result;
 		};
 
-		$scope.saveForm = function (lostAndFound, lostAndFoundForm, event) {
+		$scope.saveForm = function (lostAndFound, event) {
 			console.log('Saving object: ' + JSON.stringify(lostAndFound));
-			$scope.isFormSumbitted = true;
+			console.log('$valid: ' + $scope.forms.lostAndFoundForm.$valid);
+			$scope.isFormSubmitted = true;
+
+			/*
 			$mdDialog.show(
 				$mdDialog.alert()
 					.parent(angular.element(document.body))
@@ -105,9 +131,9 @@ angular.module('lostAndFoundApp')
 					.ariaLabel('Alert Dialog Demo')
 					.ok('OK')
 					.targetEvent(event)
-			);
+			);*/
 
-			if (!lostAndFoundForm.$valid) {
+			if (!$scope.forms.lostAndFoundForm.$valid) {
 				toastr.error('Ошибка  в заявке!');
 			} else {
 				$http.post('/buronahodok/lostandfounds/save', lostAndFound).

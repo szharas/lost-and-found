@@ -1,15 +1,15 @@
 <!-- Start: lostCategory == 'Гос. номер' -->
-<!--<div ng-show="lostAndFound.lostCategory === 'Гос. номер'">-->
+<div ng-show="lostCategory === 'Гос. номер'">
 	<div class="form-group">
 		<md-input-container class="col-md-offset-2 col-md-8 col-xs-12">
 			<label for="name">Гос. Номер*</label>
 			<input type="text" name="licenseNumber" ng-model="lostAndFound.licenseNumber"
 				   ng-required="true"/>
-			<div ng-messages="lostAndFoundForm.licenseNumber.$error"
-				 ng-show="(isFormSumbitted || lostAndFoundForm.licenseNumber.$touched) && lostAndFoundForm.licenseNumber.$invalid">
+			<div ng-messages="forms.lostAndFoundForm.licenseNumber.$error"
+				 ng-show="(isFormSumbitted || forms.lostAndFoundForm.licenseNumber.$touched) && forms.lostAndFoundForm.licenseNumber.$invalid">
 				<div ng-message="required">Обязательное поле</div>
 			</div>
 		</md-input-container>
 	</div>
-<!--</div>-->
+</div>
 <!-- End: lostCategory == 'Гос. номер' -->

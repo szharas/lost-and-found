@@ -37,7 +37,6 @@ angular.module('lostAndFoundApp')
 		this.getDeviceBrands = function () {
 			var deviceBrands = $http.get('data/deviceBrands.json').success(function (response) {
 				console.log('/data/deviceBrands.json: ' + JSON.stringify(response));
-
 				return response.data;
 			});
 
